@@ -129,17 +129,23 @@ public class CustomScreen extends Screen {
                         gravityVelocity = 0;
                     }
                     break;
+
                 case ASCENDING:
                     heartOffsetY -= speed * frameModifier;
                     jumpTimer += dt;
                     if (!upPressed || jumpTimer >= MAX_JUMP_TIME) {
                         currentState = JumpState.DESCENDING;
-                        gravityVelocity = 1.0;
+                        // CHANGE: Set this to 0.0 to make it "hang" at the peak
+                        gravityVelocity = 0.0;
                     }
                     break;
+
                 case DESCENDING:
-                    // CHANGED: Lowered 0.2 to 0.08 for smoother, slower acceleration
-                    gravityVelocity += (0.01 * frameModifier);
+                    // CHANGE: Use a smaller acceleration value to make the "start" feel floatier
+                    // You can increase this multiplier to make it gravity pull harder over time
+                    double gravityPull = 0.03;
+
+                    gravityVelocity += (gravityPull * frameModifier);
                     heartOffsetY += gravityVelocity * frameModifier;
 
                     if (heartOffsetY >= groundY) {
