@@ -8,6 +8,8 @@ import net.minecraft.client.input.KeyEvent;
 import net.minecraft.network.chat.Component;
 import org.lwjgl.glfw.GLFW;
 
+import static org.lwjgl.glfw.GLFW.GLFW_KEY_W;
+
 public class CustomScreen extends Screen {
 
     private CustomWidget heartWidget;
@@ -16,10 +18,17 @@ public class CustomScreen extends Screen {
     private boolean isLargeBox = false;
 
     // --- JUMP MODE LOGIC ---
+    private boolean isJumping = false;
+    private double jumpTimer = 0.0;
+    private double jumpVelocity = 0.0;
+    private final double GROUND_Y = 100.0; // Change 100.0 to your actual ground coordinate
+    private float velocity = 0.0f;
+    private final float GRAVITY = 0.6f;     // How fast it accelerates downward
+    private final float JUMP_FORCE = -12.0f; // Initial upward push
     private boolean isJumpMode = false;
-    private double jumpTimer = 0;
     private double gravityVelocity = 0; // Added this for acceleration
-    private static final double MAX_JUMP_TIME = 0.3;
+
+    private static final double MAX_JUMP_TIME = 0.6;
 
     private enum JumpState { IDLE, ASCENDING, DESCENDING }
     private JumpState currentState = JumpState.IDLE;
@@ -83,7 +92,7 @@ public class CustomScreen extends Screen {
     @Override
     public boolean keyPressed(KeyEvent event) {
         int keyCode = InputConstants.getKey(event).getValue();
-        if (keyCode == GLFW.GLFW_KEY_W) upPressed = true;
+        if (keyCode == GLFW_KEY_W) upPressed = true;
         if (keyCode == GLFW.GLFW_KEY_S) downPressed = true;
         if (keyCode == GLFW.GLFW_KEY_A) leftPressed = true;
         if (keyCode == GLFW.GLFW_KEY_D) rightPressed = true;
@@ -93,7 +102,7 @@ public class CustomScreen extends Screen {
     @Override
     public boolean keyReleased(KeyEvent event) {
         int keyCode = InputConstants.getKey(event).getValue();
-        if (keyCode == GLFW.GLFW_KEY_W) upPressed = false;
+        if (keyCode == GLFW_KEY_W) upPressed = false;
         if (keyCode == GLFW.GLFW_KEY_S) downPressed = false;
         if (keyCode == GLFW.GLFW_KEY_A) leftPressed = false;
         if (keyCode == GLFW.GLFW_KEY_D) rightPressed = false;
@@ -121,7 +130,7 @@ public class CustomScreen extends Screen {
                     }
                     break;
                 case ASCENDING:
-                    heartOffsetY -= (speed * 2) * frameModifier;
+                    heartOffsetY -= speed * frameModifier;
                     jumpTimer += dt;
                     if (!upPressed || jumpTimer >= MAX_JUMP_TIME) {
                         currentState = JumpState.DESCENDING;
@@ -130,7 +139,7 @@ public class CustomScreen extends Screen {
                     break;
                 case DESCENDING:
                     // CHANGED: Lowered 0.2 to 0.08 for smoother, slower acceleration
-                    gravityVelocity += (0.08 * frameModifier);
+                    gravityVelocity += (0.01 * frameModifier);
                     heartOffsetY += gravityVelocity * frameModifier;
 
                     if (heartOffsetY >= groundY) {
@@ -150,6 +159,26 @@ public class CustomScreen extends Screen {
             if (downPressed) heartOffsetY += speed * frameModifier;
             if (leftPressed) heartOffsetX -= speed * frameModifier;
             if (rightPressed) heartOffsetX += speed * frameModifier;
+        }
+
+        // JUMPING PHYSICS LOGIC
+        if (isJumping) {
+            // Apply gravity to velocity
+            velocity += GRAVITY * delta;
+
+            // Move the heart
+            heartOffsetY += velocity * delta;
+
+            // Check if we hit the ground (assuming GROUND_Y is your minY)
+            if (heartOffsetY >= GROUND_Y) {
+                heartOffsetY = GROUND_Y;
+                velocity = 0.0f; // Reset velocity
+                isJumping = false; // Landed
+            }
+        } else if (upPressed && heartOffsetY == GROUND_Y) {
+            // Trigger jump
+            isJumping = true;
+            velocity = JUMP_FORCE;
         }
 
         // Keep bounds
