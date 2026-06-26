@@ -107,8 +107,8 @@ public class CustomScreen extends Screen {
 
         // BORDERS!!!                                                                <<<<----
         int minX, maxX, minY, maxY;
-        if (isLargeBox) { minX = -112; maxX = 112; minY = -58; maxY = 56; }
-        else { minX = -67; maxX = 67; minY = -68; maxY = 66; }
+        if (isLargeBox) { minX = -114; maxX = 114; minY = -59; maxY = 59; }
+        else { minX = -69; maxX = 69; minY = -69; maxY = 69; }
 
         heartOffsetX = Math.max(minX, Math.min(heartOffsetX, maxX));
         heartOffsetY = Math.max(minY, Math.min(heartOffsetY, maxY));

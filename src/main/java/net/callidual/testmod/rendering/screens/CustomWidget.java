@@ -1,12 +1,10 @@
 package net.callidual.testmod.rendering.screens;
 
-import com.mojang.blaze3d.pipeline.RenderPipeline;
-import net.callidual.testmod.TestMod;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
-import org.apache.logging.log4j.core.config.plugins.util.ResolverUtil;
 
 public class CustomWidget extends AbstractWidget {
 
@@ -154,35 +152,29 @@ public class CustomWidget extends AbstractWidget {
         drawPixelNumberString(graphics, String.valueOf(heartOffsetY), tx + 7, ty2, TEXT_COLOR);
 
 
-// 4. YOUR EXACT PIXEL HEART ART MATRIX (Fixed: Size multiplier removed!)
         // Row 8
-        graphics.fill(hx - 6, hy - 7, hx - 4, hy - 6, RED);
-        graphics.fill(hx + 4, hy - 7, hx + 6, hy - 6, RED);
-
+        //graphics.fill(hx - 6, hy - 7, hx - 4, hy - 6, RED);
+        //graphics.fill(hx + 4, hy - 7, hx + 6, hy - 6, RED);
         // Row 7
-        graphics.fill(hx - 7, hy - 6, hx - 2, hy - 5, RED);
-        graphics.fill(hx + 2, hy - 6, hx + 7, hy - 5, RED);
-
+        //graphics.fill(hx - 7, hy - 6, hx - 2, hy - 5, RED);
+        //graphics.fill(hx + 2, hy - 6, hx + 7, hy - 5, RED);
         // Row 6
-        graphics.fill(hx - 8, hy - 5, hx - 1, hy - 4, RED);
-        graphics.fill(hx + 1, hy - 5, hx + 8, hy - 4, RED);
-
+        //graphics.fill(hx - 8, hy - 5, hx - 1, hy - 4, RED);
+        //graphics.fill(hx + 1, hy - 5, hx + 8, hy - 4, RED);
         // Row 5
-        graphics.fill(hx - 8, hy - 4, hx - 1, hy - 3, RED);
-        graphics.fill(hx + 1, hy - 4, hx + 8, hy - 3, RED);
-
+        //graphics.fill(hx - 8, hy - 4, hx - 1, hy - 3, RED);
+        //graphics.fill(hx + 1, hy - 4, hx + 8, hy - 3, RED);
         // Rows 4 down to -2 combined block
-        graphics.fill(hx - 8, hy - 3, hx + 8, hy + 3, RED);
-
+        //graphics.fill(hx - 8, hy - 3, hx + 8, hy + 3, RED);
         // Row -3 down to -8
-        graphics.fill(hx - 6, hy + 3, hx + 6, hy + 4, RED);
-        graphics.fill(hx - 6, hy + 4, hx + 6, hy + 5, RED);
-        graphics.fill(hx - 4, hy + 5, hx + 4, hy + 6, RED);
-        graphics.fill(hx - 4, hy + 6, hx + 4, hy + 7, RED);
-        graphics.fill(hx - 2, hy + 7, hx + 2, hy + 8, RED);
-        graphics.fill(hx - 2, hy + 8, hx + 2, hy + 9, RED);
+        //graphics.fill(hx - 6, hy + 3, hx + 6, hy + 4, RED);
+        //graphics.fill(hx - 6, hy + 4, hx + 6, hy + 5, RED);
+        //graphics.fill(hx - 4, hy + 5, hx + 4, hy + 6, RED);
+        //graphics.fill(hx - 4, hy + 6, hx + 4, hy + 7, RED);
+        //graphics.fill(hx - 2, hy + 7, hx + 2, hy + 8, RED);
+        //graphics.fill(hx - 2, hy + 8, hx + 2, hy + 9, RED);
 
-        graphics.blit(RenderPipeline.builder().build(), HEART_PICTURE, 100, 100, 0.0f, 0.0f, 16, 16, 16, 16);
+        graphics.blit(RenderPipelines.GUI_TEXTURED, HEART_PICTURE, hx-6, hy-6, 0.0f, 0.0f, 12, 12, 12, 12);
     }
 
     @Override
