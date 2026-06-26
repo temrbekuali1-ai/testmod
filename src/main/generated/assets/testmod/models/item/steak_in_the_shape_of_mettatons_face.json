@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "testmod:item/steak_in_the_shape_of_mettatons_face"
+  }
+}

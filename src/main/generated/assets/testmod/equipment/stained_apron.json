@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:stained_apron"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "testmod:stained_apron"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:stained_apron"
+      }
+    ]
+  }
+}

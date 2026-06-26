@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:bandage"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "testmod:bandage"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:bandage"
+      }
+    ]
+  }
+}

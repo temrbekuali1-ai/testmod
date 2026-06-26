@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:cloudy_glasses"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "testmod:cloudy_glasses"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:cloudy_glasses"
+      }
+    ]
+  }
+}

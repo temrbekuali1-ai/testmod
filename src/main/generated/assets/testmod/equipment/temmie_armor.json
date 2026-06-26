@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:temmie_armor"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "testmod:temmie_armor"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:temmie_armor"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "testmod",
+	"version": "${version}",
+	"name": "TestModUndertale",
+	"description": "This is a test mod. There should be a description of an Undertale mod.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "Kaupenjoe's tutorial series - https://youtu.be/7i_rtkj67qk?si=aDgil6RtAKo-kM1p"
+	},
+	"license": "Maybe there will be some...",
+	"icon": "assets/testmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.callidual.testmod.TestMod"
+		],
+		"client": [
+			"net.callidual.testmod.TestModClient"
+		],
+		"fabric-datagen": [
+			"net.callidual.testmod.TestModDataGenerator"
+		]
+	},
+	"mixins": [
+		"testmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

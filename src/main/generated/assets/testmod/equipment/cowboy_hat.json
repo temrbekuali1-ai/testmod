@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:cowboy_hat"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "testmod:cowboy_hat"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:cowboy_hat"
+      }
+    ]
+  }
+}

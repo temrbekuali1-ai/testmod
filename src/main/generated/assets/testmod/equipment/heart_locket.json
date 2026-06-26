@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:heart_locket"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "testmod:heart_locket"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:heart_locket"
+      }
+    ]
+  }
+}

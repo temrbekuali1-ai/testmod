@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:faded_ribbon"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "testmod:faded_ribbon"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:faded_ribbon"
+      }
+    ]
+  }
+}

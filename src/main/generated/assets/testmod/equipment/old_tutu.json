@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "testmod:old_tutu"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "testmod:old_tutu"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "testmod:old_tutu"
+      }
+    ]
+  }
+}
