@@ -6,18 +6,20 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.KeyEvent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 public class CustomScreen extends Screen {
-
-    private static final Identifier HEART_PICTURE = Identifier.fromNamespaceAndPath("testmod", "textures/gui/heart.png");
 
     private CustomWidget heartWidget;
     // Changed to double for ultra-smooth sub-pixel math accumulation across frames
     private double heartOffsetX = 0;
     private double heartOffsetY = 0;
     private boolean isLargeBox = false;
+
+    // --- JUMP MODE VARIABLES ---
+    private boolean isJumpMode = false;
+    private double jumpTimer = 0;
+    private static final double MAX_JUMP_TIME = 2.0;
 
     private boolean upPressed = false;
     private boolean downPressed = false;
@@ -46,6 +48,16 @@ public class CustomScreen extends Screen {
 
         this.addRenderableWidget(heartWidget);
 
+        // --- NEW JUMP MODE BUTTON ---
+        this.addRenderableWidget(Button.builder(
+                Component.literal("Toggle Jump Mode"),
+                btn -> {
+                    this.isJumpMode = !this.isJumpMode;
+                    this.jumpTimer = 0; // Reset timer on swap
+                }
+        ).bounds(this.width / 2 - 105, this.height - 65, 210, 20).build());
+
+        // YOUR ORIGINAL BUTTONS
         this.addRenderableWidget(Button.builder(
                 Component.literal("Toggle Size"),
                 btn -> {
@@ -65,7 +77,6 @@ public class CustomScreen extends Screen {
     @Override
     public void tick() {
         super.tick();
-        // Removed movement logic from here completely so it doesn't stutter at 20Hz
     }
 
     @Override
@@ -93,17 +104,34 @@ public class CustomScreen extends Screen {
         super.extractRenderState(graphics, mouseX, mouseY, delta);
 
         // --- REAL-TIME FRAME RENDERING MOVEMENT SYSTEM ---
-        // 'speed = 2' stays exactly as you specified!
         double speed = 2;
-
-        // Minecraft's 'delta' represents the fraction of time passed since the last frame.
-        // Multiplying by delta * 2.5 forces the execution velocity scale to reach exactly 100 units/sec.
         double frameModifier = delta * 2.5;
 
-        if (upPressed) heartOffsetY -= speed * frameModifier;
-        if (downPressed) heartOffsetY += speed * frameModifier;
-        if (leftPressed) heartOffsetX -= speed * frameModifier;
-        if (rightPressed) heartOffsetX += speed * frameModifier;
+        // --- JUMP MODE LOGIC INTEGRATION ---
+        if (isJumpMode) {
+            double dt = delta / 20.0;
+
+            // Jump logic (W key) bounded by 2 seconds
+            if (upPressed && jumpTimer < MAX_JUMP_TIME) {
+                heartOffsetY -= (speed * 2) * frameModifier; // Moves up faster
+                jumpTimer += dt;
+            } else {
+                // Gravity pulling down
+                heartOffsetY += speed * frameModifier;
+                if (jumpTimer > 0) jumpTimer -= dt * 2; // Cooldown timer when falling
+            }
+
+            // Allow left/right movement while in the air
+            if (leftPressed) heartOffsetX -= speed * frameModifier;
+            if (rightPressed) heartOffsetX += speed * frameModifier;
+
+        } else {
+            // YOUR ORIGINAL REGULAR MOVEMENT
+            if (upPressed) heartOffsetY -= speed * frameModifier;
+            if (downPressed) heartOffsetY += speed * frameModifier;
+            if (leftPressed) heartOffsetX -= speed * frameModifier;
+            if (rightPressed) heartOffsetX += speed * frameModifier;
+        }
 
         // BORDERS!!!                                                                <<<<----
         int minX, maxX, minY, maxY;
@@ -113,7 +141,8 @@ public class CustomScreen extends Screen {
         heartOffsetX = Math.max(minX, Math.min(heartOffsetX, maxX));
         heartOffsetY = Math.max(minY, Math.min(heartOffsetY, maxY));
 
-        // Pass cast integers over to your pixel grid render engine
+        // Pass data over to your pixel grid render engine
+        heartWidget.setMode(isJumpMode); // Push the mode state
         heartWidget.setHeartOffset((int) heartOffsetX, (int) heartOffsetY);
     }
 }

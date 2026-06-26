@@ -9,13 +9,22 @@ import net.minecraft.resources.Identifier;
 public class CustomWidget extends AbstractWidget {
 
     private static final Identifier HEART_PICTURE = Identifier.fromNamespaceAndPath("testmod", "textures/gui/heart.png");
+    private static final Identifier HEART_JUMP = Identifier.fromNamespaceAndPath("testmod", "textures/gui/heart_jump.png"); // NEW TEXTURE
 
     int heartOffsetX = 0;
     int heartOffsetY = 0;
     private int sizeMultiplier = 1;
 
+    // --- MODE TRACKER ---
+    private boolean isJumpMode = false;
+
     public CustomWidget(int x, int y, int width, int height) {
         super(x, y, width, height, Component.empty());
+    }
+
+    // --- ADDED SETTER FOR JUMP MODE ---
+    public void setMode(boolean isJumpMode) {
+        this.isJumpMode = isJumpMode;
     }
 
     public void setHeartOffset(int x, int y) {
@@ -44,15 +53,10 @@ public class CustomWidget extends AbstractWidget {
                 graphics.fill(x + 1, y, x + 2, y + 1, color);
                 break;
             case '2':
-                // Top horizontal bar
                 graphics.fill(x, y, x + 3, y + 1, color);
-                // Right side top pixel drop
                 graphics.fill(x + 2, y + 1, x + 3, y + 2, color);
-                // Middle horizontal bar
                 graphics.fill(x, y + 2, x + 3, y + 3, color);
-                // Left side bottom pixel drop
                 graphics.fill(x, y + 3, x + 1, y + 4, color);
-                // Bottom horizontal baseline
                 graphics.fill(x, y + 4, x + 3, y + 5, color);
                 break;
             case '3':
@@ -151,30 +155,9 @@ public class CustomWidget extends AbstractWidget {
         // Render live dynamic Y number sequence right next to "Y:" (at offset X + 7)
         drawPixelNumberString(graphics, String.valueOf(heartOffsetY), tx + 7, ty2, TEXT_COLOR);
 
-
-        // Row 8
-        //graphics.fill(hx - 6, hy - 7, hx - 4, hy - 6, RED);
-        //graphics.fill(hx + 4, hy - 7, hx + 6, hy - 6, RED);
-        // Row 7
-        //graphics.fill(hx - 7, hy - 6, hx - 2, hy - 5, RED);
-        //graphics.fill(hx + 2, hy - 6, hx + 7, hy - 5, RED);
-        // Row 6
-        //graphics.fill(hx - 8, hy - 5, hx - 1, hy - 4, RED);
-        //graphics.fill(hx + 1, hy - 5, hx + 8, hy - 4, RED);
-        // Row 5
-        //graphics.fill(hx - 8, hy - 4, hx - 1, hy - 3, RED);
-        //graphics.fill(hx + 1, hy - 4, hx + 8, hy - 3, RED);
-        // Rows 4 down to -2 combined block
-        //graphics.fill(hx - 8, hy - 3, hx + 8, hy + 3, RED);
-        // Row -3 down to -8
-        //graphics.fill(hx - 6, hy + 3, hx + 6, hy + 4, RED);
-        //graphics.fill(hx - 6, hy + 4, hx + 6, hy + 5, RED);
-        //graphics.fill(hx - 4, hy + 5, hx + 4, hy + 6, RED);
-        //graphics.fill(hx - 4, hy + 6, hx + 4, hy + 7, RED);
-        //graphics.fill(hx - 2, hy + 7, hx + 2, hy + 8, RED);
-        //graphics.fill(hx - 2, hy + 8, hx + 2, hy + 9, RED);
-
-        graphics.blit(RenderPipelines.GUI_TEXTURED, HEART_PICTURE, hx-6, hy-6, 0.0f, 0.0f, 12, 12, 12, 12);
+        // --- DYNAMIC TEXTURE SWAP INTEGRATION ---
+        Identifier currentTexture = isJumpMode ? HEART_JUMP : HEART_PICTURE;
+        graphics.blit(RenderPipelines.GUI_TEXTURED, currentTexture, hx-6, hy-6, 0.0f, 0.0f, 12, 12, 12, 12);
     }
 
     @Override
