@@ -104,7 +104,7 @@ public class CustomScreen extends Screen {
     public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
         super.extractRenderState(graphics, mouseX, mouseY, delta);
 
-        double speed = 1;
+        double speed = 2;
         double frameModifier = delta * 2.5;
         double groundY = isLargeBox ? 59.0 : 69.0;
 
@@ -117,7 +117,7 @@ public class CustomScreen extends Screen {
                     if (upPressed) {
                         currentState = JumpState.ASCENDING;
                         jumpTimer = 0;
-                        gravityVelocity = 0; // Reset on jump start
+                        gravityVelocity = 0;
                     }
                     break;
                 case ASCENDING:
@@ -125,18 +125,18 @@ public class CustomScreen extends Screen {
                     jumpTimer += dt;
                     if (!upPressed || jumpTimer >= MAX_JUMP_TIME) {
                         currentState = JumpState.DESCENDING;
-                        gravityVelocity = 1.0; // Start initial fall speed
+                        gravityVelocity = 1.0;
                     }
                     break;
                 case DESCENDING:
-                    // Acceleration: Increase speed based on time
-                    gravityVelocity += (0.2 * frameModifier);
+                    // CHANGED: Lowered 0.2 to 0.08 for smoother, slower acceleration
+                    gravityVelocity += (0.08 * frameModifier);
                     heartOffsetY += gravityVelocity * frameModifier;
 
                     if (heartOffsetY >= groundY) {
                         heartOffsetY = groundY;
                         currentState = JumpState.IDLE;
-                        gravityVelocity = 0; // Reset once hit ground
+                        gravityVelocity = 0;
                     }
                     break;
             }
@@ -145,12 +145,14 @@ public class CustomScreen extends Screen {
             if (rightPressed) heartOffsetX += speed * frameModifier;
 
         } else {
+            // Regular mode movement
             if (upPressed) heartOffsetY -= speed * frameModifier;
             if (downPressed) heartOffsetY += speed * frameModifier;
             if (leftPressed) heartOffsetX -= speed * frameModifier;
             if (rightPressed) heartOffsetX += speed * frameModifier;
         }
 
+        // Keep bounds
         int minX, maxX, minY, maxY;
         if (isLargeBox) { minX = -114; maxX = 114; minY = -59; maxY = 59; }
         else { minX = -69; maxX = 69; minY = -69; maxY = 69; }
