@@ -141,13 +141,24 @@ public class CustomScreen extends Screen {
                     break;
 
                 case DESCENDING:
-                    // CHANGE: Use a smaller acceleration value to make the "start" feel floatier
-                    // You can increase this multiplier to make it gravity pull harder over time
-                    double gravityPull = 0.03;
+                    // 1. MONTAGE TUNING:
+                    // Higher acceleration makes it hit max speed instantly.
+                    // Higher terminal velocity lets it keep going fast.
+                    double gravityPull = 0.1;
+                    double terminalVelocity = 25.0; // Higher cap for that "fast" look
 
+                    // Accelerate
                     gravityVelocity += (gravityPull * frameModifier);
+
+                    // Apply cap
+                    if (gravityVelocity > terminalVelocity) {
+                        gravityVelocity = terminalVelocity;
+                    }
+
+                    // Move the heart
                     heartOffsetY += gravityVelocity * frameModifier;
 
+                    // Hard stop on ground
                     if (heartOffsetY >= groundY) {
                         heartOffsetY = groundY;
                         currentState = JumpState.IDLE;
