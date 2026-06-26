@@ -11,15 +11,17 @@ import org.lwjgl.glfw.GLFW;
 public class CustomScreen extends Screen {
 
     private CustomWidget heartWidget;
-    // Changed to double for ultra-smooth sub-pixel math accumulation across frames
     private double heartOffsetX = 0;
     private double heartOffsetY = 0;
     private boolean isLargeBox = false;
 
-    // --- JUMP MODE VARIABLES ---
+    // --- JUMP MODE LOGIC ---
     private boolean isJumpMode = false;
     private double jumpTimer = 0;
     private static final double MAX_JUMP_TIME = 2.0;
+
+    private enum JumpState { IDLE, ASCENDING, DESCENDING }
+    private JumpState currentState = JumpState.IDLE;
 
     private boolean upPressed = false;
     private boolean downPressed = false;
@@ -48,22 +50,23 @@ public class CustomScreen extends Screen {
 
         this.addRenderableWidget(heartWidget);
 
-        // --- NEW JUMP MODE BUTTON ---
         this.addRenderableWidget(Button.builder(
                 Component.literal("Toggle Jump Mode"),
                 btn -> {
                     this.isJumpMode = !this.isJumpMode;
-                    this.jumpTimer = 0; // Reset timer on swap
+                    this.currentState = JumpState.IDLE; // Reset to ground
+                    this.heartOffsetY = 0; // Snap to ground
+                    this.jumpTimer = 0;
                 }
         ).bounds(this.width / 2 - 105, this.height - 65, 210, 20).build());
 
-        // YOUR ORIGINAL BUTTONS
         this.addRenderableWidget(Button.builder(
                 Component.literal("Toggle Size"),
                 btn -> {
                     this.isLargeBox = !this.isLargeBox;
                     this.heartOffsetX = 0;
                     this.heartOffsetY = 0;
+                    this.currentState = JumpState.IDLE;
                     this.init(this.width, this.height);
                 }
         ).bounds(this.width / 2 - 105, this.height - 40, 100, 20).build());
@@ -72,11 +75,6 @@ public class CustomScreen extends Screen {
                 Component.literal("Done"),
                 btn -> this.minecraft.setScreen(null)
         ).bounds(this.width / 2 + 5, this.height - 40, 100, 20).build());
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
     }
 
     @Override
@@ -103,37 +101,53 @@ public class CustomScreen extends Screen {
     public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
         super.extractRenderState(graphics, mouseX, mouseY, delta);
 
-        // --- REAL-TIME FRAME RENDERING MOVEMENT SYSTEM ---
         double speed = 2;
         double frameModifier = delta * 2.5;
 
-        // --- JUMP MODE LOGIC INTEGRATION ---
         if (isJumpMode) {
             double dt = delta / 20.0;
 
-            // Jump logic (W key) bounded by 2 seconds
-            if (upPressed && jumpTimer < MAX_JUMP_TIME) {
-                heartOffsetY -= (speed * 2) * frameModifier; // Moves up faster
-                jumpTimer += dt;
-            } else {
-                // Gravity pulling down
-                heartOffsetY += speed * frameModifier;
-                if (jumpTimer > 0) jumpTimer -= dt * 2; // Cooldown timer when falling
-            }
+            // --- JUMP STATE MACHINE ---
+            switch (currentState) {
+                case IDLE:
+                    if (upPressed) {
+                        currentState = JumpState.ASCENDING;
+                        jumpTimer = 0;
+                    }
+                    break;
+                case ASCENDING:
+                    heartOffsetY -= (speed * 2) * frameModifier;
+                    jumpTimer += dt;
+                    if (!upPressed || jumpTimer >= MAX_JUMP_TIME) {
+                        currentState = JumpState.DESCENDING;
+                    }
+                    break;
+                case DESCENDING:
+                    heartOffsetY += speed * frameModifier;
+                    // Landing check (assuming 69 is ground in regular box and 59 in large box)
+                    while (heartOffsetY >= 59 && isLargeBox) {
+                        heartOffsetY = heartOffsetY - 3;
+                        if (heartOffsetY == 69) {
+                            currentState = JumpState.IDLE;
+                            break;
+                        }}
+                    while (heartOffsetY >= 69 && !isLargeBox) {
+                            heartOffsetY = heartOffsetY - 3;
+                        if (heartOffsetY == 69) {
+                            currentState = JumpState.IDLE;
+                            break;
+                        }}}
 
-            // Allow left/right movement while in the air
             if (leftPressed) heartOffsetX -= speed * frameModifier;
             if (rightPressed) heartOffsetX += speed * frameModifier;
 
         } else {
-            // YOUR ORIGINAL REGULAR MOVEMENT
             if (upPressed) heartOffsetY -= speed * frameModifier;
             if (downPressed) heartOffsetY += speed * frameModifier;
             if (leftPressed) heartOffsetX -= speed * frameModifier;
             if (rightPressed) heartOffsetX += speed * frameModifier;
         }
 
-        // BORDERS!!!                                                                <<<<----
         int minX, maxX, minY, maxY;
         if (isLargeBox) { minX = -114; maxX = 114; minY = -59; maxY = 59; }
         else { minX = -69; maxX = 69; minY = -69; maxY = 69; }
@@ -141,8 +155,7 @@ public class CustomScreen extends Screen {
         heartOffsetX = Math.max(minX, Math.min(heartOffsetX, maxX));
         heartOffsetY = Math.max(minY, Math.min(heartOffsetY, maxY));
 
-        // Pass data over to your pixel grid render engine
-        heartWidget.setMode(isJumpMode); // Push the mode state
+        heartWidget.setMode(isJumpMode);
         heartWidget.setHeartOffset((int) heartOffsetX, (int) heartOffsetY);
     }
 }
