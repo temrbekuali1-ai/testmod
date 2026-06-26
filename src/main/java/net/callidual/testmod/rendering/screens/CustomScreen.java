@@ -18,7 +18,7 @@ public class CustomScreen extends Screen {
     // --- JUMP MODE LOGIC ---
     private boolean isJumpMode = false;
     private double jumpTimer = 0;
-    private static final double MAX_JUMP_TIME = 2.0;
+    private static final double MAX_JUMP_TIME = 0.3;
 
     private enum JumpState { IDLE, ASCENDING, DESCENDING }
     private JumpState currentState = JumpState.IDLE;
@@ -54,8 +54,9 @@ public class CustomScreen extends Screen {
                 Component.literal("Toggle Jump Mode"),
                 btn -> {
                     this.isJumpMode = !this.isJumpMode;
-                    this.currentState = JumpState.IDLE; // Reset to ground
-                    this.heartOffsetY = 0; // Snap to ground
+                    this.currentState = JumpState.IDLE;
+                    // Snap to ground on toggle
+                    this.heartOffsetY = isLargeBox ? 59 : 69;
                     this.jumpTimer = 0;
                 }
         ).bounds(this.width / 2 - 105, this.height - 65, 210, 20).build());
@@ -103,6 +104,8 @@ public class CustomScreen extends Screen {
 
         double speed = 2;
         double frameModifier = delta * 2.5;
+        // Determine the ground level based on your box size
+        double groundY = isLargeBox ? 59.0 : 69.0;
 
         if (isJumpMode) {
             double dt = delta / 20.0;
@@ -110,6 +113,8 @@ public class CustomScreen extends Screen {
             // --- JUMP STATE MACHINE ---
             switch (currentState) {
                 case IDLE:
+                    // Ensure we are at ground level while idle
+                    if (heartOffsetY != groundY) heartOffsetY = groundY;
                     if (upPressed) {
                         currentState = JumpState.ASCENDING;
                         jumpTimer = 0;
@@ -124,19 +129,13 @@ public class CustomScreen extends Screen {
                     break;
                 case DESCENDING:
                     heartOffsetY += speed * frameModifier;
-                    // Landing check (assuming 69 is ground in regular box and 59 in large box)
-                    while (heartOffsetY >= 59 && isLargeBox) {
-                        heartOffsetY = heartOffsetY - 3;
-                        if (heartOffsetY == 69) {
-                            currentState = JumpState.IDLE;
-                            break;
-                        }}
-                    while (heartOffsetY >= 69 && !isLargeBox) {
-                            heartOffsetY = heartOffsetY - 3;
-                        if (heartOffsetY == 69) {
-                            currentState = JumpState.IDLE;
-                            break;
-                        }}}
+                    // Landing check: use groundY instead of 0
+                    if (heartOffsetY >= groundY) {
+                        heartOffsetY = groundY;
+                        currentState = JumpState.IDLE;
+                    }
+                    break;
+            }
 
             if (leftPressed) heartOffsetX -= speed * frameModifier;
             if (rightPressed) heartOffsetX += speed * frameModifier;
@@ -149,7 +148,7 @@ public class CustomScreen extends Screen {
         }
 
         int minX, maxX, minY, maxY;
-        if (isLargeBox) { minX = -114; maxX = 114; minY = -59; maxY = 59; }
+        if (isLargeBox) { minX = -114; maxX = 114; minY = -59; maxY = 59; } //BORDERS!!!
         else { minX = -69; maxX = 69; minY = -69; maxY = 69; }
 
         heartOffsetX = Math.max(minX, Math.min(heartOffsetX, maxX));
