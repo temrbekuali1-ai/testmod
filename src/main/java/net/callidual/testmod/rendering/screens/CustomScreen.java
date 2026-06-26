@@ -18,6 +18,7 @@ public class CustomScreen extends Screen {
     // --- JUMP MODE LOGIC ---
     private boolean isJumpMode = false;
     private double jumpTimer = 0;
+    private double gravityVelocity = 0; // Added this for acceleration
     private static final double MAX_JUMP_TIME = 0.3;
 
     private enum JumpState { IDLE, ASCENDING, DESCENDING }
@@ -55,9 +56,9 @@ public class CustomScreen extends Screen {
                 btn -> {
                     this.isJumpMode = !this.isJumpMode;
                     this.currentState = JumpState.IDLE;
-                    // Snap to ground on toggle
                     this.heartOffsetY = isLargeBox ? 59 : 69;
                     this.jumpTimer = 0;
+                    this.gravityVelocity = 0; // Reset velocity
                 }
         ).bounds(this.width / 2 - 105, this.height - 65, 210, 20).build());
 
@@ -68,6 +69,7 @@ public class CustomScreen extends Screen {
                     this.heartOffsetX = 0;
                     this.heartOffsetY = 0;
                     this.currentState = JumpState.IDLE;
+                    this.gravityVelocity = 0; // Reset velocity
                     this.init(this.width, this.height);
                 }
         ).bounds(this.width / 2 - 105, this.height - 40, 100, 20).build());
@@ -102,22 +104,20 @@ public class CustomScreen extends Screen {
     public void extractRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta) {
         super.extractRenderState(graphics, mouseX, mouseY, delta);
 
-        double speed = 2;
+        double speed = 1;
         double frameModifier = delta * 2.5;
-        // Determine the ground level based on your box size
         double groundY = isLargeBox ? 59.0 : 69.0;
 
         if (isJumpMode) {
             double dt = delta / 20.0;
 
-            // --- JUMP STATE MACHINE ---
             switch (currentState) {
                 case IDLE:
-                    // Ensure we are at ground level while idle
                     if (heartOffsetY != groundY) heartOffsetY = groundY;
                     if (upPressed) {
                         currentState = JumpState.ASCENDING;
                         jumpTimer = 0;
+                        gravityVelocity = 0; // Reset on jump start
                     }
                     break;
                 case ASCENDING:
@@ -125,14 +125,18 @@ public class CustomScreen extends Screen {
                     jumpTimer += dt;
                     if (!upPressed || jumpTimer >= MAX_JUMP_TIME) {
                         currentState = JumpState.DESCENDING;
+                        gravityVelocity = 1.0; // Start initial fall speed
                     }
                     break;
                 case DESCENDING:
-                    heartOffsetY += speed * frameModifier;
-                    // Landing check: use groundY instead of 0
+                    // Acceleration: Increase speed based on time
+                    gravityVelocity += (0.2 * frameModifier);
+                    heartOffsetY += gravityVelocity * frameModifier;
+
                     if (heartOffsetY >= groundY) {
                         heartOffsetY = groundY;
                         currentState = JumpState.IDLE;
+                        gravityVelocity = 0; // Reset once hit ground
                     }
                     break;
             }
@@ -148,7 +152,7 @@ public class CustomScreen extends Screen {
         }
 
         int minX, maxX, minY, maxY;
-        if (isLargeBox) { minX = -114; maxX = 114; minY = -59; maxY = 59; } //BORDERS!!!
+        if (isLargeBox) { minX = -114; maxX = 114; minY = -59; maxY = 59; }
         else { minX = -69; maxX = 69; minY = -69; maxY = 69; }
 
         heartOffsetX = Math.max(minX, Math.min(heartOffsetX, maxX));
