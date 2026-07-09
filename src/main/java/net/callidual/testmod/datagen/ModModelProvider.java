@@ -30,6 +30,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ModBlocks.CRACKED_RUIN_BRICKS4_5);
         blockModelGenerators.createTrivialCube(ModBlocks.CRACKED_RUIN_BRICKS5);
         blockModelGenerators.createTrivialCube(ModBlocks.CRACKED_RUIN_BRICKS5_5);
+
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_BLOCK1);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_BLOCK2);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_BLOCK3);
     }
 
     @Override

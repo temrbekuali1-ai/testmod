@@ -1,6 +1,7 @@
 package net.callidual.testmod.block;
 
 import net.callidual.testmod.TestMod;
+import net.callidual.testmod.block.custom.StartBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -59,6 +60,16 @@ public class ModBlocks {
     public static final Block RUIN_CEILING = registerBlock("ruin_ceiling",
             properties -> new Block(properties.strength(2f,7)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
+    public static final Block START_BLOCK1 = registerBlock("start_block1",
+            properties -> new StartBlock(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_BLOCK2 = registerBlock("start_block2",
+            properties -> new StartBlock(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_BLOCK3 = registerBlock("start_block3",
+            properties -> new StartBlock(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
 
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {

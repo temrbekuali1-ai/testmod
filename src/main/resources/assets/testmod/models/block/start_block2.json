@@ -1,0 +1,23 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [256, 256],
+	"textures": {
+		"0": "testmod:block/start_block2",
+		"particle": "testmod:block/start_block2"
+	},
+	"elements": [
+		{
+			"from": [-16, 0, -16],
+			"to": [32, 16, 32],
+			"faces": {
+				"north": {"uv": [3, 3, 6, 4], "texture": "#0"},
+				"east": {"uv": [0, 3, 3, 4], "texture": "#0"},
+				"south": {"uv": [9, 3, 12, 4], "texture": "#0"},
+				"west": {"uv": [6, 3, 9, 4], "texture": "#0"},
+				"up": {"uv": [6, 3, 3, 0], "texture": "#0"},
+				"down": {"uv": [9, 0, 6, 3], "texture": "#0"}
+			}
+		}
+	]
+}

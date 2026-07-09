@@ -66,9 +66,13 @@
   "block.testmod.cracked_ruin_bricks5": "Cracked Bricks of the Ruins",
   "block.testmod.cracked_ruin_bricks5_5": "Cracked Bricks of the Ruins",
 
+  "block.testmod.start_block1": "What are you doing?",
+  "block.testmod.start_block2": "Curiosity killed the cat...",
+  "block.testmod.start_block3": "...but you're not a cat, right?",
+
   "creativemodetab.testmod.undertale_items": "Undertale Items",
   "creativemodetab.testmod.undertale_blocks": "Undertale Blocks",
 
 
-  "item.testmod.___": "Макси Чай - Лайм и Мята АРИДЖИНАЛ секретка"
+  "item.testmod.___": "Cекретный напиток"
 }
