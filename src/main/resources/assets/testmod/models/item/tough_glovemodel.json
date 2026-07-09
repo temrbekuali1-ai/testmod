@@ -2,8 +2,8 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "testmod:items/tough_glove",
-		"particle": "testmod:items/tough_glove"
+		"0": "testmod:item/tough_glove",
+		"particle": "testmod:item/tough_glove"
 	},
 	"elements": [
 		{

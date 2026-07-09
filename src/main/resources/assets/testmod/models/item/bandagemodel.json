@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "testmod:items/bandage",
-		"particle": "testmod:items/bandage"
+		"0": "testmod:item/bandage",
+		"particle": "testmod:item/bandage"
 	},
 	"elements": [
 		{
