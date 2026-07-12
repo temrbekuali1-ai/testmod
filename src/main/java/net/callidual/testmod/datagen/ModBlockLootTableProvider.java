@@ -44,6 +44,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropOther(ModBlocks.CRACKED_RUIN_BRICKS5, ModBlocks.CRACKED_RUIN_BRICKS);
         dropOther(ModBlocks.CRACKED_RUIN_BRICKS5_5, ModBlocks.CRACKED_RUIN_BRICKS);
 
+        dropSelf(ModBlocks.START_GRAY);
+        dropSelf(ModBlocks.START_BLACK);
+
 
     }
 

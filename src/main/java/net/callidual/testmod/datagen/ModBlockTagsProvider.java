@@ -31,7 +31,12 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.CRACKED_RUIN_BRICKS4)
                 .add(ModBlocks.CRACKED_RUIN_BRICKS4_5)
                 .add(ModBlocks.CRACKED_RUIN_BRICKS5)
-                .add(ModBlocks.CRACKED_RUIN_BRICKS5_5);
+                .add(ModBlocks.CRACKED_RUIN_BRICKS5_5)
+
+                .add(ModBlocks.START_GRAY)
+                .add(ModBlocks.START_BLACK);
+
+
 
 
         valueLookupBuilder(BlockTags.NEEDS_IRON_TOOL);

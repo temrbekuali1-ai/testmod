@@ -60,6 +60,12 @@ public class ModBlocks {
     public static final Block RUIN_CEILING = registerBlock("ruin_ceiling",
             properties -> new Block(properties.strength(2f,7)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final Block START_GRAY = registerBlock("start_gray",
+            properties -> new Block(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_BLACK = registerBlock("start_black",
+            properties -> new Block(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
 
     public static final Block START_BLOCK1 = registerBlock("start_block1",
             properties -> new StartBlock(properties.strength(-1)

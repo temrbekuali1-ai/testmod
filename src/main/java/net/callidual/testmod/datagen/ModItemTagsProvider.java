@@ -27,8 +27,6 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(ModItems.WORND)
                 .add(ModItems.REALKNIFE);
         valueLookupBuilder(ModTags.Items.ARMORS)
-                .add(ModItems.BANDAGE);
-        valueLookupBuilder(ModTags.Items.ARMORS)
                 .add(ModItems.BANDAGE)
                 .add(ModItems.FADED_RIBBON)
                 .add(ModItems.MANLY_BANDANNA)

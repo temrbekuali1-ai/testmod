@@ -66,7 +66,10 @@
   "block.testmod.cracked_ruin_bricks5": "Cracked Bricks of the Ruins",
   "block.testmod.cracked_ruin_bricks5_5": "Cracked Bricks of the Ruins",
 
-  "block.testmod.start_block1": "What are you doing?",
+  "block.testmod.start_gray": "Gray",
+  "block.testmod.start_black": "Black",
+
+  "block.testmod.start_block1": "What are you even doing?",
   "block.testmod.start_block2": "Curiosity killed the cat...",
   "block.testmod.start_block3": "...but you're not a cat, right?",
 
