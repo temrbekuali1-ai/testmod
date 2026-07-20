@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "testmod:item/bandage"
+    "model": "testmod:item/bandagemodel"
   }
 }

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "testmod:item/tough_glove"
+    "model": "testmod:item/tough_glovemodel"
   }
 }
