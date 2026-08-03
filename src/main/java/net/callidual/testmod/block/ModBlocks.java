@@ -80,6 +80,33 @@ public class ModBlocks {
             properties -> new StartBlock(properties.strength(-1)
                     .sound(SoundType.EMPTY)));
 
+    public static final Block START_ENTRANCE_BLOCK1 = registerBlock("start_entrance_block01",
+            properties -> new EntryBlockX(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_ENTRANCE_BLOCK2 = registerBlock("start_entrance_block02",
+            properties -> new EntryBlockX(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_ENTRANCE_BLOCK3 = registerBlock("start_entrance_block03",
+            properties -> new EntryBlockX(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_ENTRANCE_BLOCK4NC = registerBlock("start_entrance_block04nc",
+            properties -> new EntryBlockZ(properties.strength(-1).noCollision()
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_ENTRANCE_BLOCK5NC = registerBlock("start_entrance_block05nc",
+            properties -> new EntryBlockZ(properties.strength(-1).noCollision()
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_ENTRANCE_BLOCK6 = registerBlock("start_entrance_block06",
+            properties -> new EntryBlockZ(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_ENTRANCE_BLOCK7 = registerBlock("start_entrance_block07",
+            properties -> new EntryBlockZ(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_ENTRANCE_BLOCK8 = registerBlock("start_entrance_block08",
+            properties -> new EntryBlockZ(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block START_ENTRANCE_BLOCK9 = registerBlock("start_entrance_block09",
+            properties -> new EntryBlockZ(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
     public static final Block ENTRANCE_BLOCK1 = registerBlock("entrance_block1",
             properties -> new EntryBlockX(properties.strength(-1)
                     .sound(SoundType.EMPTY)));
@@ -107,7 +134,6 @@ public class ModBlocks {
     public static final Block ENTRANCE_BLOCK9 = registerBlock("entrance_block9",
             properties -> new EntryBlockZ(properties.strength(-1)
                     .sound(SoundType.EMPTY)));
-
 
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
