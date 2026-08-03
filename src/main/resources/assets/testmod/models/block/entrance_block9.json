@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"texture_size": [128, 128],
+	"textures": {
+		"0": "testmod:block/entrance_block9",
+		"particle": "testmod:block/entrance_block9"
+	},
+	"elements": [
+		{
+			"from": [-16, 0, 0],
+			"to": [16, 32, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-16, 0, 0]},
+			"faces": {
+				"north": {"uv": [2, 2, 6, 6], "texture": "#0"},
+				"east": {"uv": [0, 2, 2, 6], "texture": "#0"},
+				"south": {"uv": [8, 2, 12, 6], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 6], "texture": "#0"},
+				"up": {"uv": [6, 2, 2, 0], "texture": "#0"},
+				"down": {"uv": [10, 0, 6, 2], "texture": "#0"}
+			}
+		}
+	]
+}

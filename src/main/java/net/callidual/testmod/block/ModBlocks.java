@@ -1,6 +1,8 @@
 package net.callidual.testmod.block;
 
 import net.callidual.testmod.TestMod;
+import net.callidual.testmod.block.custom.EntryBlockX;
+import net.callidual.testmod.block.custom.EntryBlockZ;
 import net.callidual.testmod.block.custom.StartBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -12,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+
 import java.util.function.Function;
 
 public class ModBlocks {
@@ -77,12 +80,40 @@ public class ModBlocks {
             properties -> new StartBlock(properties.strength(-1)
                     .sound(SoundType.EMPTY)));
 
+    public static final Block ENTRANCE_BLOCK1 = registerBlock("entrance_block1",
+            properties -> new EntryBlockX(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block ENTRANCE_BLOCK2 = registerBlock("entrance_block2",
+            properties -> new EntryBlockX(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block ENTRANCE_BLOCK3 = registerBlock("entrance_block3",
+            properties -> new EntryBlockX(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block ENTRANCE_BLOCK4NC = registerBlock("entrance_block4nc",
+            properties -> new EntryBlockZ(properties.strength(-1).noCollision()
+                    .sound(SoundType.EMPTY)));
+    public static final Block ENTRANCE_BLOCK5NC = registerBlock("entrance_block5nc",
+            properties -> new EntryBlockZ(properties.strength(-1).noCollision()
+                    .sound(SoundType.EMPTY)));
+    public static final Block ENTRANCE_BLOCK6 = registerBlock("entrance_block6",
+            properties -> new EntryBlockZ(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block ENTRANCE_BLOCK7 = registerBlock("entrance_block7",
+            properties -> new EntryBlockZ(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block ENTRANCE_BLOCK8 = registerBlock("entrance_block8",
+            properties -> new EntryBlockZ(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+    public static final Block ENTRANCE_BLOCK9 = registerBlock("entrance_block9",
+            properties -> new EntryBlockZ(properties.strength(-1)
+                    .sound(SoundType.EMPTY)));
+
+
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(TestMod.MOD_ID, name))));
         registerBlockItem(name, toRegister);
         return Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(TestMod.MOD_ID, name), toRegister);
-
     }
 
     private static void registerBlockItem(String name, Block block) {

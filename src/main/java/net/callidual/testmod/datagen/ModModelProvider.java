@@ -37,6 +37,16 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_BLOCK1);
         blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_BLOCK2);
         blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_BLOCK3);
+
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK1);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK2);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK3);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK4NC);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK5NC);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK6);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK7);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK8);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.ENTRANCE_BLOCK9);
     }
 
     @Override

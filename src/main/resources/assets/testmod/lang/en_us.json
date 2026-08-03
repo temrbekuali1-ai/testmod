@@ -73,6 +73,16 @@
   "block.testmod.start_block2": "Curiosity killed the cat...",
   "block.testmod.start_block3": "...but you're not a cat, right?",
 
+  "block.testmod.entrance_block1": "",
+  "block.testmod.entrance_block2": "Cool",
+  "block.testmod.entrance_block3": "",
+  "block.testmod.entrance_block4nc": "",
+  "block.testmod.entrance_block5nc": "",
+  "block.testmod.entrance_block6": "",
+  "block.testmod.entrance_block7": "Ok",
+  "block.testmod.entrance_block8": "",
+  "block.testmod.entrance_block9": "",
+
   "creativemodetab.testmod.undertale_items": "Undertale Items",
   "creativemodetab.testmod.undertale_blocks": "Undertale Blocks",
 
