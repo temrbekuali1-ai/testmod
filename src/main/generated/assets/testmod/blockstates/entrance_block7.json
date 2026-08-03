@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "testmod:block/entrance_block7"
+    },
+    "facing=east": {
+      "model": "testmod:block/entrance_block7",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "testmod:block/entrance_block7",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "testmod:block/entrance_block7",
+      "y": 270
+    }
+  }
+}
