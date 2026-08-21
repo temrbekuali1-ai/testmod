@@ -73,7 +73,7 @@ public class ModCreativeModeTabs {
                     }).build());
 
 
-    public static final CreativeModeTab UNDERTALE_BLOCKS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+    /*public static final CreativeModeTab UNDERTALE_BLOCKS_TAB = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             Identifier.fromNamespaceAndPath(TestMod.MOD_ID, "undertale_blocks"),
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.RUIN_BRICKS))
                     .title(Component.translatable("creativemodetab.testmod.undertale_blocks"))
@@ -85,7 +85,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RUIN_CEILING);
 
 
-                    }).build());
+                    }).build());*/
 
     public static void registerModCreativeModeTabs() {
         TestMod.LOGGER.info("Registering Creative Mode Tabs for " + TestMod.MOD_ID);
