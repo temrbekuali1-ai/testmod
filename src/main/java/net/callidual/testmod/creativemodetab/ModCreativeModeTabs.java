@@ -21,7 +21,7 @@ public class ModCreativeModeTabs {
             FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.PIE))
                     .title(Component.translatable("creativemodetab.testmod.undertale_items"))
                     .displayItems((parameters, output) -> {
-                        output.accept(ModItems.CHISEL);
+                        //output.accept(ModItems.CHISEL);
                         output.accept(ModItems.PIE);
                         output.accept(ModItems.SNOWPIS);
                         output.accept(ModItems.QUICHE);
@@ -47,7 +47,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PCHISPS);
                         output.accept(ModItems.TEMFLAKES);
                         output.accept(ModItems.ASTROFOOD);
-                        output.accept(ModItems.BAD_MEMORY);
+                        output.accept(ModItems.BADMEM);
                         output.accept(ModItems.LAST_DREAM);
                         output.accept(ModItems.STICK);
                         output.accept(ModItems.BANDAGE);

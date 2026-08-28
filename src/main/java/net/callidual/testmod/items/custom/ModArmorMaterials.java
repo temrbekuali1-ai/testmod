@@ -41,7 +41,7 @@ public class ModArmorMaterials {
             7, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0.07f, ModTags.Items.REPAIR, BANDAGE_KEY);
 
     public static final ArmorMaterial RIBBON_MATERIAL = new ArmorMaterial(9, ArmorMaterials.makeDefense(0,0,0,3,0),
-            7, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0.5f, ModTags.Items.REPAIR, RIBBON_KEY);
+            7, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, ModTags.Items.REPAIR, RIBBON_KEY);
 
     public static final ArmorMaterial BANDANNA_MATERIAL = new ArmorMaterial(9, ArmorMaterials.makeDefense(0,0,0,7,0),
             7, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, ModTags.Items.REPAIR, BANDANNA_KEY);
@@ -50,13 +50,13 @@ public class ModArmorMaterials {
             7, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, ModTags.Items.REPAIR, TUTU_KEY);
 
     public static final ArmorMaterial GLASSES_MATERIAL = new ArmorMaterial(11, ArmorMaterials.makeDefense(0,0,0,5,0),
-            7, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0.1f, ModTags.Items.REPAIR, GLASSES_KEY);
+            7, SoundEvents.ARMOR_EQUIP_GENERIC, 1, 0, ModTags.Items.REPAIR, GLASSES_KEY);
 
     public static final ArmorMaterial TEMMIE_MATERIAL = new ArmorMaterial(16, ArmorMaterials.makeDefense(0,0,20,0,0),
-            7, SoundEvents.ARMOR_EQUIP_GENERIC, 1, 0.05f, ModTags.Items.REPAIR, TEMMIE_KEY);
+            7, SoundEvents.ARMOR_EQUIP_GENERIC, 0.5f, 0.1f, ModTags.Items.REPAIR, TEMMIE_KEY);
 
     public static final ArmorMaterial APRON_MATERIAL = new ArmorMaterial(9, ArmorMaterials.makeDefense(0,0,11,0,0),
-            7, SoundEvents.ARMOR_EQUIP_GENERIC, 1, 0, ModTags.Items.REPAIR, APRON_KEY);
+            7, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0.1f, ModTags.Items.REPAIR, APRON_KEY);
 
     public static final ArmorMaterial COWBOY_MATERIAL = new ArmorMaterial(9, ArmorMaterials.makeDefense(0,0,0,12,0),
             7, SoundEvents.ARMOR_EQUIP_GENERIC, 0, 0, ModTags.Items.REPAIR, COWBOY_KEY);
