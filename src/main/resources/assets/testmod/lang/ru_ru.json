@@ -57,7 +57,7 @@
   "item.testmod.temmie_flakes": "Хлопья Темми",
   "tooltip.testmod.temflakes.info": "*Это просто кусочки разорванной цветной бумаги.",
 
-  "item.testmod.realknife": "НАСТОЯЩИЙ Нож",
+  "item.testmod.realknife": "§c§lНАСТОЯЩИЙ Нож",
   "tooltip.testmod.realknife.info": "*Вот мы и здесь!",
   "item.testmod.worn_dagger": "Изношенный кинжал",
   "tooltip.testmod.wornd.info": "*Идеально подходит для разрезания растений и лоз.",
@@ -94,7 +94,7 @@
   "tooltip.testmod.apron.info": "*Восстанавливает 1 ОЗ каждый второй ход.",
   "item.testmod.heart_locket": "Медальон в виде сердца",
   "tooltip.testmod.heart_locket.info": "*На нём написано: \"Лучшие друзья навсегда\".",
-  "item.testmod.the_locket": "Медальон.",
+  "item.testmod.the_locket": "§7§lМедальон.",
   "tooltip.testmod.the_locket.info": "*Вы чувствуете его биение.",
 
   "item.testmod.tobytool": "Тобинструмент",

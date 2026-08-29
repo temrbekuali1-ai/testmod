@@ -374,7 +374,7 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item REALKNIFE = registerItem("real_knife", properties -> new RealKnifeItem(properties.sword(ToolMaterial.NETHERITE, 94, -3.1f))
+    public static final Item REALKNIFE = registerItem("real_knife", properties -> new Item(properties.sword(ToolMaterial.NETHERITE, 94, -3.1f))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -535,10 +535,10 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item THE_LOCKET = registerItem("the_locket", properties -> new TheLocketItem(
+    public static final Item THE_LOCKET = registerItem("the_locket", properties -> new ModArmorItem(
+            ModArmorMaterials.LOCKET_MATERIAL, ArmorType.CHESTPLATE,
             properties
-                    .stacksTo(1)
-                    .humanoidArmor(ModArmorMaterials.LOCKET_MATERIAL, ArmorType.CHESTPLATE))
+                    .stacksTo(1))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {

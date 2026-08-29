@@ -8,7 +8,6 @@ import com.geckolib.renderer.GeoArmorRenderer;
 import com.geckolib.util.GeckoLibUtil;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
-import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -25,14 +24,10 @@ import java.util.function.Consumer;
 
 public class ModArmorItem extends Item implements GeoItem {
 
-    private final Supplier<GeoArmorRenderer<?, ?>> renderer;
-
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+
     public ModArmorItem(ArmorMaterial material, ArmorType type, Properties properties) {
         super(properties.humanoidArmor(material, type));
-
-        this.renderer = Suppliers.memoize(
-                () -> new GeoArmorRenderer<>(this));
     }
 
     @Override
@@ -47,11 +42,12 @@ public class ModArmorItem extends Item implements GeoItem {
     @Override
     public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         consumer.accept(new GeoRenderProvider() {
-            private final Supplier<GeoArmorRenderer<ModArmorItem, HumanoidRenderState>>
-                    renderer = Suppliers.memoize(() -> new GeoArmorRenderer<>(ModArmorItem.this));
+            private final Supplier<ModArmorRenderer<?>> renderer =
+                    Suppliers.memoize(() -> new ModArmorRenderer<>(ModArmorItem.this));
 
+            @Nullable
             @Override
-            public @Nullable GeoArmorRenderer<?, ?> getGeoArmorRenderer(ItemStack itemStack, EquipmentSlot equipmentSlot) {
+            public GeoArmorRenderer<?, ?> getGeoArmorRenderer(ItemStack itemStack, EquipmentSlot equipmentSlot) {
                 return this.renderer.get();
             }
         });
