@@ -429,9 +429,12 @@ public class ModItems {
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
-            ModItems.addMultilineTooltip("tooltip.testmod.old_tutu.info",builder);
+            ModItems.addMultilineTooltip("tooltip.testmod.old_tutu.info", builder);
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
-        }});
+        }
+    }
+
+    );
 
     public static final Item CLOUDY_GLASSES = registerItem("cloudy_glasses", properties -> new ModArmorItem(
             ModArmorMaterials.GLASSES_MATERIAL, ArmorType.HELMET,
