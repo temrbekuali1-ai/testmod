@@ -57,7 +57,7 @@
   "item.testmod.temmie_flakes": "Temmie Flakes",
   "tooltip.testmod.temflakes.info": "*It's just torn up pieces of colored construction paper.",
 
-  "item.testmod.realknife": "REAL Knife",
+  "item.testmod.real_knife": "§c§lREAL Knife",
   "tooltip.testmod.realknife.info": "*Here we are!",
   "item.testmod.worn_dagger": "Worn Dagger",
   "tooltip.testmod.wornd.info": "*Perfect for cutting plants and vines.",
@@ -94,7 +94,7 @@
   "tooltip.testmod.apron.info": "*Heals 1 HP every other turn.",
   "item.testmod.heart_locket": "Heart Locket",
   "tooltip.testmod.heart_locket.info": "*It says \"Best Friends Forever.\"",
-  "item.testmod.the_locket": "The Locket.",
+  "item.testmod.the_locket": "§7§lThe Locket.",
   "tooltip.testmod.the_locket.info": "*You can feel it beating.",
 
   "item.testmod.tobytool": "Toby Tool",
