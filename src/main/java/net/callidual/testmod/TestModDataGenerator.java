@@ -14,6 +14,7 @@ public class TestModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModItemTagsProvider::new);
 		pack.addProvider(ModBlockLootTableProvider::new);
 		pack.addProvider(ModEquipmentAssetProvider::new);
+		pack.addProvider(ModSoundsProvider::new);
 
 	}
 }

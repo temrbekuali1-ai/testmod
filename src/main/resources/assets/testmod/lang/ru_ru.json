@@ -57,6 +57,9 @@
   "item.testmod.temmie_flakes": "Хлопья Темми",
   "tooltip.testmod.temflakes.info": "*Это просто кусочки разорванной цветной бумаги.",
 
+  "sounds.testmod.damage": "Получение урона",
+  "sounds.testmod.heal": "Восстановление здоровья",
+
   "item.testmod.real_knife": "§c§lНАСТОЯЩИЙ Нож",
   "tooltip.testmod.realknife.info": "*Вот мы и здесь!",
   "item.testmod.worn_dagger": "Изношенный кинжал",

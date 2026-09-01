@@ -57,6 +57,9 @@
   "item.testmod.temmie_flakes": "Temmie Flakes",
   "tooltip.testmod.temflakes.info": "*It's just torn up pieces of colored construction paper.",
 
+  "sounds.testmod.damage": "Damage",
+  "sounds.testmod.heal": "Heal",
+
   "item.testmod.real_knife": "§c§lREAL Knife",
   "tooltip.testmod.realknife.info": "*Here we are!",
   "item.testmod.worn_dagger": "Worn Dagger",
