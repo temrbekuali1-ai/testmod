@@ -48,7 +48,9 @@ public class ModFoods {
 
     public static final FoodProperties BAD_MEMORY = new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build();
     public static final Consumable BAD_MEMORY_CONSUMABLE = Consumables.defaultFood()
-            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.INSTANT_DAMAGE,1,0, true, false, false)))
+            .onConsume(new ApplyStatusEffectsConsumeEffect(java.util.List.of(
+                    new MobEffectInstance(MobEffects.INSTANT_DAMAGE,1,0, true, false, false),
+                    new MobEffectInstance(MobEffects.BLINDNESS, 333, 1, true, false, true))))
             .onConsume(new PlaySoundConsumeEffect(ModSounds.DAMAGE)).sound(SoundEvents.AMBIENT_CAVE).consumeSeconds(0.5f).build();
 
     public static final FoodProperties BISICLE = new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build();
@@ -107,7 +109,6 @@ public class ModFoods {
     public static final Consumable HUSH_PUPPY_CONSUMABLE = Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH,1,5, false, false, false)))
             .onConsume(new PlaySoundConsumeEffect(ModSounds.HEAL)).sound(SoundEvents.WOLF_WHINE_BABY).consumeSeconds(0.5f).build();
-
 
     public static final FoodProperties INOODLES = new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build();
     public static final Consumable INOODLES_CONSUMABLE = Consumables.defaultFood()

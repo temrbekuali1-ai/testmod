@@ -75,7 +75,7 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item BADMEM = registerItem("bad_memory", properties -> new Item(properties.food(ModFoods.BAD_MEMORY, ModFoods.BAD_MEMORY_CONSUMABLE).stacksTo(1).rarity(Rarity.UNCOMMON))
+    public static final Item BADMEM = registerItem("bad_memory", properties -> new BadMemItem(properties.food(ModFoods.BAD_MEMORY, ModFoods.BAD_MEMORY_CONSUMABLE).stacksTo(1).rarity(Rarity.UNCOMMON))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -83,7 +83,15 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item BISICLE = registerItem("bisicle", properties -> new Item(properties.food(ModFoods.BISICLE, ModFoods.BISICLE_CONSUMABLE).stacksTo(1).rarity(Rarity.UNCOMMON))
+    public static final Item UNISICLE = registerItem("unisicle", properties -> new Item(properties.food(ModFoods.UNISICLE, ModFoods.UNISICLE_CONSUMABLE).stacksTo(1).rarity(Rarity.UNCOMMON))
+    {
+        @Override
+        public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
+            ModItems.addMultilineTooltip("tooltip.testmod.unisicle.info",builder);
+            super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
+        }});
+
+    public static final Item BISICLE = registerItem("bisicle", properties -> new Item(properties.food(ModFoods.BISICLE, ModFoods.BISICLE_CONSUMABLE).usingConvertsTo(ModItems.UNISICLE).craftRemainder(ModItems.UNISICLE).stacksTo(1).rarity(Rarity.UNCOMMON))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -247,18 +255,9 @@ public class ModItems {
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
-            ModItems.addMultilineTooltip("tooltip.testmod.",builder);
+            ModItems.addMultilineTooltip("tooltip.testmod.temmie_flakes",builder);
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
-
-    public static final Item UNISICLE = registerItem("unisicle", properties -> new Item(properties.food(ModFoods.UNISICLE, ModFoods.UNISICLE_CONSUMABLE).stacksTo(1).rarity(Rarity.UNCOMMON))
-    {
-        @Override
-        public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
-            ModItems.addMultilineTooltip("tooltip.testmod.unisicle.info",builder);
-            super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
-        }});
-
 
     public static final Item STICK = registerItem("stick", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.WOOD, -0.9F, -2))
     {
@@ -286,7 +285,7 @@ public class ModItems {
         }}
     );
 
-    public static final Item TOY_KNIFE = registerItem("toy_knife", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.GOLD, -1, -2))
+    public static final Item TOY_KNIFE = registerItem("toy_knife", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.WOOD, 2, -2))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -294,7 +293,7 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item TGLOVE = registerItem("tough_glove", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.STONE, 0, -2))
+    public static final Item TGLOVE = registerItem("tough_glove", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.STONE, 3, -2))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -302,7 +301,7 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item BSHOES = registerItem("ballet_shoes", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.IRON, 1, -2.3f))
+    public static final Item BSHOES = registerItem("ballet_shoes", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.IRON, 4, -2.3f))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {

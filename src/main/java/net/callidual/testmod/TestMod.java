@@ -2,10 +2,13 @@ package net.callidual.testmod;
 
 import net.callidual.testmod.block.ModBlocks;
 import net.callidual.testmod.creativemodetab.ModCreativeModeTabs;
+import net.callidual.testmod.datagen.ModRecipeProvider;
 import net.callidual.testmod.items.ModItems;
+import net.callidual.testmod.loot.ModLootTableModifiers;
 import net.callidual.testmod.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,6 +29,8 @@ public class TestMod implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		LootTableEvents.MODIFY.register(ModLootTableModifiers::modifyLootTables);
 
 		ModSounds.registerSounds();
 

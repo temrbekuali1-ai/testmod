@@ -16,8 +16,8 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE);
-                /*.add(ModBlocks.RUIN_BRICKS)
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.RUIN_BRICKS)
                 .add(ModBlocks.CRACKED_RUIN_BRICKS)
                 .add(ModBlocks.RUIN_FLOOR)
                 .add(ModBlocks.RUIN_SEMIFLOOR)
@@ -31,7 +31,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.CRACKED_RUIN_BRICKS4)
                 .add(ModBlocks.CRACKED_RUIN_BRICKS4_5)
                 .add(ModBlocks.CRACKED_RUIN_BRICKS5)
-                .add(ModBlocks.CRACKED_RUIN_BRICKS5_5);*/
+                .add(ModBlocks.CRACKED_RUIN_BRICKS5_5);
 
 
 
