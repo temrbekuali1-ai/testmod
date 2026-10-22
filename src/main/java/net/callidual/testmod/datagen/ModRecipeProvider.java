@@ -31,13 +31,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .requires(ModItems.UNISICLE)
                         .unlockedBy(getHasName(ModItems.UNISICLE), has(ModItems.UNISICLE))
                         .group("xsicle")
-                        .save(output);
+                        .save(output, "bisicle_from_unisicle");
 
                 shapeless(RecipeCategory.MISC, ModItems.UNISICLE)
                         .requires(ModItems.BISICLE)
                         .unlockedBy(getHasName(ModItems.UNISICLE), has(ModItems.UNISICLE))
                         .group("xsicle")
-                        .save(output);
+                        .save(output, "unisicle_from_bisicle");
 
                 simpleCookingRecipe(null, SmokingRecipe::new, 200, Items.MANGROVE_PROPAGULE, ModItems.HOT_DOG, 2.2f);
                 simpleCookingRecipe(null, SmokingRecipe::new, 200, ModItems.HOT_DOG, ModItems.HOT_CAT, 2.2f);
@@ -255,18 +255,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .group("utweapons")
                         .save(output);
 
-
-
                 shaped(RecipeCategory.FOOD, ModItems.BISICLE)
-                        .pattern("B B")
-                        .pattern("I I")
-                        .pattern("S S")
+                        .pattern("BB")
+                        .pattern("II")
+                        .pattern("SS")
                         .define('S', Items.STICK)
                         .define('I', Items.ICE)
                         .define('B', Items.SWEET_BERRIES)
                         .unlockedBy(getHasName(Items.ICE), has(Items.ICE))
                         .group("utfood")
-                        .save(output);
+                        .save(output, "bisicle_from_crafting");
 
                 shaped(RecipeCategory.FOOD, ModItems.UNISICLE)
                         .pattern("B")
@@ -277,7 +275,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('B', Items.SWEET_BERRIES)
                         .unlockedBy(getHasName(Items.ICE), has(Items.ICE))
                         .group("utfood")
-                        .save(output);
+                        .save(output, "unisicle_from_crafting");
 
                 shaped(RecipeCategory.FOOD, ModItems.SNOWPIS)
                         .pattern("121")
@@ -288,16 +286,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('3', Items.SNOWBALL)
                         .define('4', Items.ENCHANTED_GOLDEN_APPLE)
                         .unlockedBy(getHasName(Items.ENCHANTED_GOLDEN_APPLE), has(Items.ENCHANTED_GOLDEN_APPLE))
-                        .save(output);
-
-                shaped(RecipeCategory.FOOD, ModItems.NICE_CREAM)
-                        .pattern(" 1 ")
-                        .pattern("121")
-                        .pattern(" 3 ")
-                        .define('1', Items.ICE)
-                        .define('2', Items.SNOW)
-                        .define('3', Items.BREAD)
-                        .unlockedBy(getHasName(Items.ICE), has(Items.ICE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.QUICHE)
@@ -310,18 +299,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('4', Items.BLUE_EGG)
                         .unlockedBy(getHasName(Items.GOLDEN_CARROT), has(Items.GOLDEN_CARROT))
                         .unlockedBy(getHasName(Items.PUMPKIN_PIE), has(Items.PUMPKIN_PIE))
-                        .save(output);
-
-                shaped(RecipeCategory.FOOD, ModItems.QUICHE)
-                        .pattern(" 1 ")
-                        .pattern("234")
-                        .pattern(" 1 ")
-                        .define('1', Items.GOLDEN_CARROT)
-                        .define('2', Items.CAKE)
-                        .define('3', Items.PUMPKIN_PIE)
-                        .define('4', Items.ENCHANTED_GOLDEN_APPLE)
-                        .unlockedBy(getHasName(Items.GOLDEN_CARROT), has(Items.GOLDEN_CARROT))
-                        .unlockedBy(getHasName(Items.PUMPKIN_PIE), has(Items.PUMPKIN_PIE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.MCANDY)
@@ -331,10 +309,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('1', Items.SUGAR)
                         .define('2', Items.SWEET_BERRIES)
                         .unlockedBy(getHasName(Items.SWEET_BERRIES), has(Items.SWEET_BERRIES))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.CINNAMON)
-                        .pattern("12")
+                        .pattern("12 ")
                         .pattern("343")
                         .pattern(" 21")
                         .define('1', Items.SNOWBALL)
@@ -342,6 +321,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('3', Items.WHEAT)
                         .define('4', Items.SUGAR)
                         .unlockedBy(getHasName(Items.BREAD), has(Items.BREAD))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.HUSH_PUPPY)
@@ -350,6 +330,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('2', ModItems.HOT_DOG)
                         .unlockedBy(getHasName(Items.GOLDEN_CARROT), has(Items.GOLDEN_CARROT))
                         .unlockedBy(getHasName(ModItems.HOT_DOG), has(ModItems.HOT_DOG))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.NICE_CREAM)
@@ -361,18 +342,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('3', Items.GOLDEN_CARROT)
                         .unlockedBy(getHasName(Items.MILK_BUCKET), has(Items.MILK_BUCKET))
                         .unlockedBy(getHasName(Items.ICE), has(Items.ICE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.DSALAD)
                         .pattern("123")
                         .pattern(" 4 ")
-                        .pattern("")
                         .define('1', Items.COOKED_MUTTON)
                         .define('2', Items.BONE)
                         .define('3', Items.ROTTEN_FLESH)
                         .define('4', Items.BOWL)
                         .unlockedBy(getHasName(Items.COOKED_MUTTON), has(Items.COOKED_MUTTON))
                         .unlockedBy(getHasName(Items.BOWL), has(Items.BOWL))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.SEA_TEA)
@@ -383,6 +365,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('2', Items.SEAGRASS)
                         .define('3', Items.GLASS_BOTTLE)
                         .unlockedBy(getHasName(Items.SEAGRASS), has(Items.SEAGRASS))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.CRABAP)
@@ -390,6 +373,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('1', Items.PRISMARINE_SHARD)
                         .define('2', Items.APPLE)
                         .unlockedBy(getHasName(Items.PRISMARINE_SHARD), has(Items.PRISMARINE_SHARD))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.SPIDER_DONUT)
@@ -398,6 +382,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('2', Items.SUGAR)
                         .define('3', Items.FERMENTED_SPIDER_EYE)
                         .unlockedBy(getHasName(Items.FERMENTED_SPIDER_EYE), has(Items.FERMENTED_SPIDER_EYE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.SPIDER_CIDER)
@@ -408,6 +393,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('3', Items.SPIDER_EYE)
                         .define('4', Items.POTION)
                         .unlockedBy(getHasName(Items.FERMENTED_SPIDER_EYE), has(Items.FERMENTED_SPIDER_EYE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.GLAMB)
@@ -421,16 +407,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('5', Items.COOKED_BEEF)
                         .unlockedBy(getHasName(Items.GLOWSTONE), has(Items.GLOWSTONE))
                         .unlockedBy(getHasName(Items.COOKED_BEEF), has(Items.COOKED_BEEF))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.STARFAIT)
                         .pattern("1")
                         .pattern("2")
-                        .pattern("2")
+                        .pattern("3")
                         .define('1', Items.GLISTERING_MELON_SLICE)
                         .define('2', Items.SUGAR)
                         .define('3', Items.MILK_BUCKET)
                         .unlockedBy(getHasName(Items.GLISTERING_MELON_SLICE), has(Items.GLISTERING_MELON_SLICE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.LEGHERO)
@@ -442,6 +430,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('3', Items.KELP)
                         .define('4', Items.COOKED_BEEF)
                         .unlockedBy(getHasName(Items.COOKED_BEEF), has(Items.COOKED_BEEF))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.STEAK)
@@ -452,6 +441,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('2', Items.COOKED_BEEF)
                         .define('3', Items.ENCHANTED_GOLDEN_APPLE)
                         .unlockedBy(getHasName(Items.ENCHANTED_GOLDEN_APPLE), has(Items.ENCHANTED_GOLDEN_APPLE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.JUNK_FOOD)
@@ -461,6 +451,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('1', Items.ROTTEN_FLESH)
                         .define('2', Items.APPLE)
                         .unlockedBy(getHasName(Items.APPLE), has(Items.APPLE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.INOODLES)
@@ -472,6 +463,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('3', Items.PAPER)
                         .define('4', Items.POTION)
                         .unlockedBy(getHasName(Items.GOLDEN_CARROT), has(Items.GOLDEN_CARROT))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.PCHISPS)
@@ -482,6 +474,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('2', Items.BAKED_POTATO)
                         .define('3', Items.POISONOUS_POTATO)
                         .unlockedBy(getHasName(Items.POISONOUS_POTATO), has(Items.POISONOUS_POTATO))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.ASTROFOOD)
@@ -491,6 +484,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('1', Items.SNOW_BLOCK)
                         .define('2', Items.COOKIE)
                         .unlockedBy(getHasName(Items.COOKIE), has(Items.COOKIE))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.TEMFLAKES)
@@ -503,6 +497,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('4', Items.BLUE_DYE)
                         .define('5', Items.PAPER)
                         .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.BADMEM)
@@ -517,6 +512,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('6', Items.SPIDER_EYE)
                         .define('7', Items.ROTTEN_FLESH)
                         .unlockedBy(getHasName(Items.MUSIC_DISC_11), has(Items.MUSIC_DISC_11))
+                        .group("utfood")
                         .save(output);
 
                 shaped(RecipeCategory.FOOD, ModItems.LAST_DREAM)
@@ -531,6 +527,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('6', Items.POPPY)
                         .define('7', Items.CORNFLOWER)
                         .unlockedBy(getHasName(ModItems.BADMEM), has(ModItems.BADMEM))
+                        .group("utfood")
                         .save(output);
             }
         };
