@@ -7,6 +7,9 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+
+	maven { url "https://maven.shedaniel.me" }
+
 	exclusiveContent {
 		forRepository {
 			maven {
@@ -18,6 +21,7 @@ repositories {
 			includeGroupAndSubgroups("com.geckolib")
 		}
 	}
+
 }
 fabricApi {
 	configureDataGeneration {
@@ -33,6 +37,16 @@ dependencies {
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
 	implementation "com.geckolib:geckolib-fabric-26.1.2:5.5.1"
+
+
+	compileOnly("me.shedaniel:RoughlyEnoughItems-api-fabric:26.1.819")
+	runtimeOnly("me.shedaniel:RoughlyEnoughItems-fabric:26.1.819")
+
+	include "dev.architectury:architectury-fabric:20.0.9"
+	implementation "dev.architectury:architectury-fabric:20.0.9"
+	compileOnly("me.shedaniel.cloth:basic-math:0.6.1")
+
+
 }
 
 processResources {
@@ -81,5 +95,6 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+
 	}
 }
