@@ -19,8 +19,10 @@
 			"net.callidual.testmod.TestMod"
 		],
 		"client": [
-			"net.callidual.testmod.TestModClient"
-		],
+			"net.callidual.testmod.client.TestModClient"
+		],"rei": [
+			"net.callidual.testmod.compat.TestModREIClientPlugin"
+		]
 		"fabric-datagen": [
 			"net.callidual.testmod.TestModDataGenerator"
 		]
