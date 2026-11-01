@@ -22,7 +22,7 @@
 			"net.callidual.testmod.client.TestModClient"
 		],"rei": [
 			"net.callidual.testmod.compat.TestModREIClientPlugin"
-		]
+		],
 		"fabric-datagen": [
 			"net.callidual.testmod.TestModDataGenerator"
 		]

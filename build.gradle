@@ -23,7 +23,6 @@ repositories {
 			includeGroupAndSubgroups("com.geckolib")
 		}
 	}
-
 }
 fabricApi {
 	configureDataGeneration {
