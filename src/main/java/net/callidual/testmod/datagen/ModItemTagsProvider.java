@@ -9,13 +9,15 @@ import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
 
+import static net.callidual.testmod.tags.ModTags.Items.*;
+
 public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
     public ModItemTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
         super(output, registryLookupFuture);
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider registries) {
+    protected void addTags(HolderLookup.Provider provider) {
         valueLookupBuilder(ModTags.Items.WEAPONS)
                 .add(ModItems.STICK)
                 .add(ModItems.TOY_KNIFE)
@@ -36,5 +38,29 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(ModItems.COWBOY_HAT)
                 .add(ModItems.HEART_LOCKET)
                 .add(ModItems.THE_LOCKET);
+
+        valueLookupBuilder(REPAIR_STICK)
+                .add(Items.STICK);
+
+        valueLookupBuilder(REPAIR_TOY)
+                .add(Items.CLAY_BALL);
+
+        valueLookupBuilder(REPAIR_GLOVE)
+                .add(Items.LEATHER);
+
+        valueLookupBuilder(REPAIR_SHOES)
+                .add(Items.IRON_NUGGET);
+
+        valueLookupBuilder(REPAIR_NOTE)
+                .add(Items.BOOK);
+
+        valueLookupBuilder(REPAIR_GUN)
+                .add(Items.IRON_INGOT);
+
+        valueLookupBuilder(REPAIR_PAN)
+                .add(Items.IRON_INGOT);
+
+        valueLookupBuilder(REPAIR_WORN)
+                .add(Items.IRON_SWORD);
     }
 }

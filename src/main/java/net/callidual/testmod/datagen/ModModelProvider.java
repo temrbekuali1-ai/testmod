@@ -15,7 +15,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-        blockModelGenerators.createTrivialCube(ModBlocks.RUIN_BRICKS);
+        /*blockModelGenerators.createTrivialCube(ModBlocks.RUIN_BRICKS);
         blockModelGenerators.createTrivialCube(ModBlocks.CRACKED_RUIN_BRICKS);
         blockModelGenerators.createTrivialCube(ModBlocks.RUIN_FLOOR);
         blockModelGenerators.createTrivialCube(ModBlocks.RUIN_SEMIFLOOR);
@@ -55,7 +55,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_ENTRANCE_BLOCK6);
         blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_ENTRANCE_BLOCK7);
         blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_ENTRANCE_BLOCK8);
-        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_ENTRANCE_BLOCK9);
+        blockModelGenerators.createNonTemplateModelBlock(ModBlocks.START_ENTRANCE_BLOCK9);*/
     }
 
     @Override

@@ -4,6 +4,8 @@ import com.geckolib.renderer.GeoArmorRenderer;
 import net.callidual.testmod.TestMod;
 import net.callidual.testmod.food.ModFoods;
 import net.callidual.testmod.items.custom.*;
+import net.callidual.testmod.tags.ModTags;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -12,6 +14,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -29,6 +32,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -259,7 +263,21 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item STICK = registerItem("stick", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.WOOD, -0.9F, -2))
+    public static final TagKey<Block> INCORRECT = TagKey.create(Registries.BLOCK,
+            Identifier.fromNamespaceAndPath("incorrect", TestMod.MOD_ID));
+
+    public static final ToolMaterial STIK = new ToolMaterial(
+            INCORRECT,
+            50,
+            -2,
+            -0.1F,
+            35,
+            ModTags.Items.REPAIR_STICK
+    );
+
+    public static final Item STICK = registerItem("stick", properties -> new Item(properties
+                    .rarity(Rarity.EPIC)
+                    .sword(STIK, -0.9F, -2))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -285,7 +303,18 @@ public class ModItems {
         }}
     );
 
-    public static final Item TOY_KNIFE = registerItem("toy_knife", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.WOOD, 2, -2))
+    public static final ToolMaterial TOY = new ToolMaterial(
+            INCORRECT,
+            60,
+            -2,
+            2,
+            40,
+            ModTags.Items.REPAIR_TOY
+    );
+
+    public static final Item TOY_KNIFE = registerItem("toy_knife", properties -> new Item(properties
+            .rarity(Rarity.EPIC)
+            .sword(TOY, 2, -2))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -293,7 +322,18 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item TGLOVE = registerItem("tough_glove", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.STONE, 3, -2))
+    public static final ToolMaterial GLOVE = new ToolMaterial(
+            INCORRECT,
+            130,
+            -2,
+            3,
+            25,
+            ModTags.Items.REPAIR_GLOVE
+    );
+
+    public static final Item TGLOVE = registerItem("tough_glove", properties -> new Item(properties
+            .rarity(Rarity.EPIC)
+            .sword(GLOVE, 3, -2))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -301,7 +341,18 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item BSHOES = registerItem("ballet_shoes", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.IRON, 4, -2.3f))
+    public static final ToolMaterial SHOES = new ToolMaterial(
+            INCORRECT,
+            190,
+            -2.3F,
+            4,
+            20,
+            ModTags.Items.REPAIR_SHOES
+    );
+
+    public static final Item BSHOES = registerItem("ballet_shoes", properties -> new Item(properties
+            .rarity(Rarity.EPIC)
+            .sword(SHOES, 4, -2.3f))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -309,7 +360,18 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item TORN_NOTE = registerItem("torn_notebook", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.COPPER, -1, -2.2f)
+    public static final ToolMaterial NOTE = new ToolMaterial(
+            INCORRECT,
+            250,
+            -1,
+            2.2F,
+            55,
+            ModTags.Items.REPAIR_NOTE
+    );
+
+    public static final Item TORN_NOTE = registerItem("torn_notebook", properties -> new Item(properties
+            .rarity(Rarity.EPIC)
+            .sword(NOTE, -1, -2.2f)
             .attributes(ItemAttributeModifiers.builder()
                     .add(Attributes.ATTACK_DAMAGE,
                             new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, 1, AttributeModifier.Operation.ADD_VALUE),
@@ -327,9 +389,18 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
+    public static final ToolMaterial PAN = new ToolMaterial(
+            INCORRECT,
+            1600,
+            -2.4F,
+            6,
+            20,
+            ModTags.Items.REPAIR_PAN
+    );
+
     public static final Item BURNT_PAN = registerItem("burnt_pan", properties -> new Item(properties
             .rarity(Rarity.EPIC)
-            .sword(ToolMaterial.DIAMOND, 6, -2.4f)
+            .sword(PAN, 6, -2.4f)
     ) {
         @Override
         public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
@@ -347,7 +418,18 @@ public class ModItems {
         }
     });
 
-    public static final Item EMPTY_GUN = registerItem("empty_gun", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.DIAMOND, 8, -2.4f)
+    public static final ToolMaterial GUN = new ToolMaterial(
+            INCORRECT,
+            600,
+            -2.4F,
+            8,
+            25,
+            ModTags.Items.REPAIR_GUN
+    );
+
+    public static final Item EMPTY_GUN = registerItem("empty_gun", properties -> new Item(properties
+            .rarity(Rarity.EPIC)
+            .sword(GUN, 8, -2.4f)
             .attributes(ItemAttributeModifiers.builder()
                     .add(Attributes.ATTACK_DAMAGE,
                             new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, 11, AttributeModifier.Operation.ADD_VALUE),
@@ -365,7 +447,18 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item WORND = registerItem("worn_dagger", properties -> new Item(properties.rarity(Rarity.EPIC).sword(ToolMaterial.DIAMOND, 11, -3))
+    public static final ToolMaterial WORN = new ToolMaterial(
+            INCORRECT,
+            1777,
+            -3,
+            11,
+            16,
+            ModTags.Items.REPAIR_WORN
+    );
+
+    public static final Item WORND = registerItem("worn_dagger", properties -> new Item(properties
+            .rarity(Rarity.EPIC)
+            .sword(WORN, 11, -3))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -373,7 +466,8 @@ public class ModItems {
             super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
         }});
 
-    public static final Item REALKNIFE = registerItem("real_knife", properties -> new Item(properties.sword(ToolMaterial.NETHERITE, 94, -3.1f))
+    public static final Item REALKNIFE = registerItem("real_knife", properties -> new Item(properties
+            .sword(ToolMaterial.NETHERITE, 94, -3.1f))
     {
         @Override
         public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
@@ -469,7 +563,6 @@ public class ModItems {
                         false
                 ));
             }
-
             super.inventoryTick(stack, level, entity, slot);
         }
         @Override
@@ -493,7 +586,6 @@ public class ModItems {
             ModArmorMaterials.COWBOY_MATERIAL, ArmorType.HELMET,
             properties
                     .stacksTo(1)
-
             ) {
                 @Override
                 public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, EquipmentSlot slot) {
@@ -507,10 +599,8 @@ public class ModItems {
                                 false
                         ));
                     }
-
                     super.inventoryTick(stack, level, entity, slot);
                 }
-
                 @Override
                 public void appendHoverText(
                         ItemStack itemStack,
