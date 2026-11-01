@@ -2,7 +2,6 @@ package net.callidual.testmod;
 
 import net.callidual.testmod.block.ModBlocks;
 import net.callidual.testmod.creativemodetab.ModCreativeModeTabs;
-import net.callidual.testmod.datagen.ModRecipeProvider;
 import net.callidual.testmod.items.ModItems;
 import net.callidual.testmod.loot.ModLootTableModifiers;
 import net.callidual.testmod.sound.ModSounds;
