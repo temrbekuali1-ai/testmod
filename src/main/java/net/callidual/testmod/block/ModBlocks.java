@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import java.util.function.Function;
 
 public class ModBlocks {
-    public static final Block RUIN_BRICKS = registerBlock("ruin_bricks",
+    /*public static final Block RUIN_BRICKS = registerBlock("ruin_bricks",
             properties -> new Block(properties.strength(2f,7)
                     .requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final Block CRACKED_RUIN_BRICKS = registerBlock("cracked_ruin_bricks",
@@ -133,7 +133,7 @@ public class ModBlocks {
                     .sound(SoundType.EMPTY)));
     public static final Block ENTRANCE_BLOCK9 = registerBlock("entrance_block9",
             properties -> new EntryBlockZ(properties.strength(-1)
-                    .sound(SoundType.EMPTY)));
+                    .sound(SoundType.EMPTY)));*/
 
 
     private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {

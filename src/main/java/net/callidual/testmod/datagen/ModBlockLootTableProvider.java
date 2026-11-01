@@ -28,7 +28,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
     @Override
     public void generate() {
 
-        dropSelf(ModBlocks.CRACKED_RUIN_BRICKS);
+        /*dropSelf(ModBlocks.CRACKED_RUIN_BRICKS);
         dropSelf(ModBlocks.RUIN_BRICKS);
         dropSelf(ModBlocks.RUIN_FLOOR);
         dropSelf(ModBlocks.RUIN_SEMIFLOOR);
@@ -45,7 +45,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropOther(ModBlocks.CRACKED_RUIN_BRICKS5_5, ModBlocks.CRACKED_RUIN_BRICKS);
 
         dropSelf(ModBlocks.START_GRAY);
-        dropSelf(ModBlocks.START_BLACK);
+        dropSelf(ModBlocks.START_BLACK);*/
 
 
     }
