@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nether_star": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:nether_star"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_netherite_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:netherite_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_temmie_flakes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "testmod:temmie_flakes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "testmod:temmie_armor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nether_star",
+      "has_temmie_flakes",
+      "has_netherite_chestplate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "testmod:temmie_armor"
+    ]
+  }
+}

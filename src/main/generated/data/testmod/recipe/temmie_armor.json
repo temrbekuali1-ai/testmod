@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "C": "minecraft:netherite_scrap",
+    "D": "minecraft:diamond",
+    "G": "minecraft:gold_ingot",
+    "N": "minecraft:netherite_chestplate",
+    "T": "testmod:temmie_flakes"
+  },
+  "pattern": [
+    "D D",
+    "GNG",
+    "CTC"
+  ],
+  "result": {
+    "id": "testmod:temmie_armor"
+  }
+}

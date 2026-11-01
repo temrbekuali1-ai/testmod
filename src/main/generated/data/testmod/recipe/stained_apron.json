@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "C": "minecraft:netherite_scrap",
+    "H": "minecraft:rabbit_hide",
+    "S": "minecraft:string",
+    "T": "minecraft:turtle_scute"
+  },
+  "pattern": [
+    "SCS",
+    "HTH",
+    "HHH"
+  ],
+  "result": {
+    "id": "testmod:stained_apron"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utweapons",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "S": "minecraft:string",
+    "W": "minecraft:white_wool",
+    "i": "minecraft:iron_nugget"
+  },
+  "pattern": [
+    "i i",
+    "I I",
+    "WSW"
+  ],
+  "result": {
+    "id": "testmod:ballet_shoes"
+  }
+}

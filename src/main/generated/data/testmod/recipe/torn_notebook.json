@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utweapons",
+  "key": {
+    "D": "minecraft:purple_dye",
+    "L": "minecraft:leather",
+    "N": "minecraft:nautilus_shell",
+    "P": "minecraft:paper"
+  },
+  "pattern": [
+    "LPD",
+    "LNL",
+    "DPL"
+  ],
+  "result": {
+    "id": "testmod:torn_notebook"
+  }
+}

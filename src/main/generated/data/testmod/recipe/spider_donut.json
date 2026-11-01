@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:spider_eye",
+    "2": "minecraft:sugar",
+    "3": "minecraft:fermented_spider_eye"
+  },
+  "pattern": [
+    "123"
+  ],
+  "result": {
+    "id": "testmod:spider_donut"
+  }
+}

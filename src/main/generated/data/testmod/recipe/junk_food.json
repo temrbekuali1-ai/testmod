@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:rotten_flesh",
+    "2": "minecraft:apple"
+  },
+  "pattern": [
+    " 1 ",
+    "121",
+    " 1 "
+  ],
+  "result": {
+    "id": "testmod:junk_food"
+  }
+}

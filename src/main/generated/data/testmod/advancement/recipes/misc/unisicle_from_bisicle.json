@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "testmod:unisicle_from_bisicle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_unisicle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "testmod:unisicle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_unisicle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "testmod:unisicle_from_bisicle"
+    ]
+  }
+}

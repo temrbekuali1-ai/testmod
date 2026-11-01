@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:sugar",
+    "2": "minecraft:sweet_berries"
+  },
+  "pattern": [
+    " 1 ",
+    "121",
+    " 1 "
+  ],
+  "result": {
+    "id": "testmod:monster_candy"
+  }
+}

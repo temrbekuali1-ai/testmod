@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:blue_orchid",
+    "2": "minecraft:pink_petals",
+    "3": "minecraft:dandelion",
+    "4": "testmod:bad_memory",
+    "5": "minecraft:lily_of_the_valley",
+    "6": "minecraft:poppy",
+    "7": "minecraft:cornflower"
+  },
+  "pattern": [
+    " 12",
+    "345",
+    "67 "
+  ],
+  "result": {
+    "id": "testmod:last_dream"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "damage": {
+    "sounds": [
+      "testmod:damage"
+    ],
+    "subtitle": "sounds.testmod.damage"
+  },
+  "heal": {
+    "sounds": [
+      "testmod:heal"
+    ],
+    "subtitle": "sounds.testmod.heal"
+  }
+}

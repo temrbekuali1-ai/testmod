@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "C": "minecraft:netherite_scrap",
+    "G": "minecraft:gold_block",
+    "S": "minecraft:nether_star"
+  },
+  "pattern": [
+    "C C",
+    "GSG",
+    " G "
+  ],
+  "result": {
+    "id": "testmod:the_locket"
+  }
+}

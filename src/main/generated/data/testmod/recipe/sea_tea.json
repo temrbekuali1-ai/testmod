@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:sugar",
+    "2": "minecraft:seagrass",
+    "3": "minecraft:glass_bottle"
+  },
+  "pattern": [
+    "1",
+    "2",
+    "3"
+  ],
+  "result": {
+    "id": "testmod:sea_tea"
+  }
+}

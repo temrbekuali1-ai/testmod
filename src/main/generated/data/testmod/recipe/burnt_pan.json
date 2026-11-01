@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utweapons",
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "N": "minecraft:netherite_ingot"
+  },
+  "pattern": [
+    "II ",
+    "IN ",
+    "  N"
+  ],
+  "result": {
+    "id": "testmod:burnt_pan"
+  }
+}

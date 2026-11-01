@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:golden_carrot",
+    "2": "minecraft:dried_kelp",
+    "3": "minecraft:pumpkin_pie",
+    "4": "minecraft:blue_egg"
+  },
+  "pattern": [
+    " 1 ",
+    "234",
+    " 1 "
+  ],
+  "result": {
+    "id": "testmod:abandoned_quiche"
+  }
+}

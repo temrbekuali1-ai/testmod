@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:closed_eyeblossom",
+    "2": "minecraft:redstone",
+    "3": "minecraft:cobweb",
+    "4": "minecraft:music_disc_11",
+    "5": "minecraft:bone",
+    "6": "minecraft:spider_eye",
+    "7": "minecraft:rotten_flesh"
+  },
+  "pattern": [
+    "12 ",
+    "345",
+    " 67"
+  ],
+  "result": {
+    "id": "testmod:bad_memory"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:bread",
+    "2": "minecraft:wooden_sword",
+    "3": "minecraft:kelp",
+    "4": "minecraft:cooked_beef"
+  },
+  "pattern": [
+    "121",
+    "343",
+    "121"
+  ],
+  "result": {
+    "id": "testmod:legendary_hero"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "A": "minecraft:apple",
+    "P": "minecraft:paper"
+  },
+  "pattern": [
+    "APA"
+  ],
+  "result": {
+    "id": "testmod:bandage"
+  }
+}

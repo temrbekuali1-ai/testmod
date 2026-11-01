@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:snowball",
+    "2": "minecraft:bread",
+    "3": "minecraft:wheat",
+    "4": "minecraft:sugar"
+  },
+  "pattern": [
+    "12 ",
+    "343",
+    " 21"
+  ],
+  "result": {
+    "id": "testmod:cinnamon_bunny"
+  }
+}

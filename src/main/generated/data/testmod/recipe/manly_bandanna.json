@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "D": "minecraft:shield",
+    "H": "minecraft:rabbit_hide",
+    "O": "minecraft:orange_wool",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    "SOS",
+    "ODO",
+    "HOH"
+  ],
+  "result": {
+    "id": "testmod:manly_bandanna"
+  }
+}

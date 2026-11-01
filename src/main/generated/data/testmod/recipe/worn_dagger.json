@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utweapons",
+  "key": {
+    "F": "minecraft:flint",
+    "G": "minecraft:gunpowder",
+    "I": "minecraft:iron_ingot",
+    "N": "minecraft:netherite_ingot",
+    "T": "testmod:toy_knife"
+  },
+  "pattern": [
+    "GIG",
+    "FTI",
+    "NFG"
+  ],
+  "result": {
+    "id": "testmod:worn_dagger"
+  }
+}

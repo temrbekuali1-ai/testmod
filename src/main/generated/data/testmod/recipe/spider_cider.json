@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:fermented_spider_eye",
+    "2": "minecraft:cobweb",
+    "3": "minecraft:spider_eye",
+    "4": "minecraft:potion"
+  },
+  "pattern": [
+    "123",
+    " 4 "
+  ],
+  "result": {
+    "id": "testmod:spider_cider"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:paper",
+    "2": "minecraft:baked_potato",
+    "3": "minecraft:poisonous_potato"
+  },
+  "pattern": [
+    "111",
+    "232",
+    "111"
+  ],
+  "result": {
+    "id": "testmod:popato_chisps"
+  }
+}

@@ -1,0 +1,11 @@
+// 26.1.2	-999999999-01-01T00:00:00	TestModUndertale/Tags for minecraft:item
+e00bcad81eea9ebfaecd5721aeefdf9d8e78eabf data/testmod/tags/item/armors.json
+64a5131137472b111eb62466b0b98a6cf19cd19c data/testmod/tags/item/repair_glove.json
+736f4ef35696340b932cdb679c5a32e7b28db783 data/testmod/tags/item/repair_gun.json
+2e0ada6a835e8b0f902f82a72452d5602a6064e5 data/testmod/tags/item/repair_note.json
+736f4ef35696340b932cdb679c5a32e7b28db783 data/testmod/tags/item/repair_pan.json
+a600f08f3b82ea64e2da4220752cea0537967e95 data/testmod/tags/item/repair_shoes.json
+1ad920aa65e2706dabb6265f3b12546ab33e8936 data/testmod/tags/item/repair_stick.json
+da1d12f678963493519caaff63a76241b220579f data/testmod/tags/item/repair_toy.json
+080e48d1dfb98c840ab07b8ffbb45d4ef559fbb3 data/testmod/tags/item/repair_worn.json
+9d0cf569ffc1996fb3cad72896a3d95a373051fe data/testmod/tags/item/weapons.json

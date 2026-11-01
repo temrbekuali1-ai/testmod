@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "xsicle",
+  "ingredients": [
+    "testmod:unisicle",
+    "testmod:unisicle"
+  ],
+  "result": {
+    "id": "testmod:bisicle"
+  }
+}

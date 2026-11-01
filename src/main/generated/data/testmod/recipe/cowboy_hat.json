@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "L": "minecraft:leather",
+    "N": "minecraft:netherite_ingot"
+  },
+  "pattern": [
+    "LLL",
+    "N N"
+  ],
+  "result": {
+    "id": "testmod:cowboy_hat"
+  }
+}

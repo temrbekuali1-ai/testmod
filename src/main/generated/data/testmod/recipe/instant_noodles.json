@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:golden_carrot",
+    "2": "minecraft:wheat",
+    "3": "minecraft:paper",
+    "4": "minecraft:potion"
+  },
+  "pattern": [
+    "121",
+    "343",
+    "333"
+  ],
+  "result": {
+    "id": "testmod:instant_noodles"
+  }
+}

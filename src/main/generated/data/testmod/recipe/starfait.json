@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:glistering_melon_slice",
+    "2": "minecraft:sugar",
+    "3": "minecraft:milk_bucket"
+  },
+  "pattern": [
+    "1",
+    "2",
+    "3"
+  ],
+  "result": {
+    "id": "testmod:starfait"
+  }
+}

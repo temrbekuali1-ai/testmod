@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "E": "minecraft:enchanted_golden_apple",
+    "G": "minecraft:gold_block",
+    "S": "minecraft:string"
+  },
+  "pattern": [
+    "S S",
+    "GEG",
+    " G "
+  ],
+  "result": {
+    "id": "testmod:heart_locket"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "N": "minecraft:netherite_ingot",
+    "P": "minecraft:pink_wool",
+    "S": "minecraft:string",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    "S S",
+    "PNP",
+    "WPW"
+  ],
+  "result": {
+    "id": "testmod:old_tutu"
+  }
+}

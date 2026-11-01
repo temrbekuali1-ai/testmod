@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utweapons",
+  "key": {
+    "C": "minecraft:netherite_scrap",
+    "I": "minecraft:iron_ingot",
+    "L": "minecraft:leather",
+    "N": "minecraft:netherite_ingot"
+  },
+  "pattern": [
+    "C  ",
+    "IIN",
+    "L  "
+  ],
+  "result": {
+    "id": "testmod:empty_gun"
+  }
+}

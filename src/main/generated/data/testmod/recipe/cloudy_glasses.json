@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "utarmor",
+  "key": {
+    "C": "minecraft:netherite_scrap",
+    "N": "minecraft:netherite_ingot",
+    "W": "minecraft:white_stained_glass"
+  },
+  "pattern": [
+    "C C",
+    "WNW"
+  ],
+  "result": {
+    "id": "testmod:cloudy_glasses"
+  }
+}

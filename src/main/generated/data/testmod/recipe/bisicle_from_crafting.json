@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "B": "minecraft:sweet_berries",
+    "I": "minecraft:ice",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "BB",
+    "II",
+    "SS"
+  ],
+  "result": {
+    "id": "testmod:bisicle"
+  }
+}

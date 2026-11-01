@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "utfood",
+  "key": {
+    "1": "minecraft:yellow_dye",
+    "2": "minecraft:red_dye",
+    "3": "minecraft:sugar",
+    "4": "minecraft:blue_dye",
+    "5": "minecraft:paper"
+  },
+  "pattern": [
+    " 1 ",
+    "234",
+    "555"
+  ],
+  "result": {
+    "id": "testmod:temmie_flakes"
+  }
+}

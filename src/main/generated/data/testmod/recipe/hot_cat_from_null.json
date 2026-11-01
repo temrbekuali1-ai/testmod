@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 2.2,
+  "ingredient": "testmod:hot_dog",
+  "result": {
+    "id": "testmod:hot_cat"
+  }
+}

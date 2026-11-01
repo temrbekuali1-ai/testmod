@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mangrove_propagule": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:mangrove_propagule"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "testmod:hot_dog_from_null"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mangrove_propagule"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "testmod:hot_dog_from_null"
+    ]
+  }
+}

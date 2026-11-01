@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orange_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:orange_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rabbit_hide": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:rabbit_hide"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_shield": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:shield"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "testmod:manly_bandanna"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shield",
+      "has_orange_wool",
+      "has_rabbit_hide"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "testmod:manly_bandanna"
+    ]
+  }
+}
